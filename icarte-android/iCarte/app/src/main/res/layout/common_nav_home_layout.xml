@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:id="@+id/layoutContainerCommonNavHomeHeader"
+    android:background="@color/primary"
+    android:layout_centerVertical="true"
+    android:layout_marginBottom="@dimen/activity_vertical_margin_half"
+    android:gravity="start"
+    android:paddingTop="@dimen/item_padding_top_bottom"
+    android:paddingBottom="@dimen/item_padding_top_bottom"
+    tools:showIn="@layout/activity_customer_feedback">
+
+    <com.ctrlplusz.anytextview.AnyTextView
+        android:id="@+id/txtFeedbackTitle"
+        app:typeface="DK-Mango-Smoothie.otf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="36sp"
+        android:textColor="@color/primary_text"
+        android:textStyle="bold"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_horizontal"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
+
+    <com.andexert.library.RippleView
+        android:id="@+id/rippleContainerForHomeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clipChildren="true"
+        android:focusable="true"
+        android:clickable="true"
+        app:rv_color="@color/white"
+        rv_centered="true"
+        app:rv_type="simpleRipple"
+        app:rv_alpha="150"
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/item_padding_left_right"
+        android:background="@drawable/category_item_selector_background">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnBackHome"
+            android:src="@drawable/ico_home_white"
+            android:contentDescription="@string/title_navigate_home"
+            android:background="@color/no_color" />
+    </com.andexert.library.RippleView>
+</RelativeLayout>
+
+    

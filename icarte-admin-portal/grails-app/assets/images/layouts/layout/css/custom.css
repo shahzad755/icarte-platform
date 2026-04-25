@@ -1,0 +1,22 @@
+/* here you can put your own css to customize and override the theme */
+.form-subsection-header {
+	min-height: 48px;
+	margin-top: 40px;
+	border-bottom: 2px solid #eef1f5;
+}
+
+#sortable { list-style-type: none; margin: 0; padding: 0; width: 30%; }
+#sortable tr { margin: 3px 3px 3px 3px; padding: 0.4em; padding-left: 1.5em;}
+#sortable tr span { position: absolute; margin-left: -1.3em; }
+
+.tiles .tile .tile-object>.name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 0px;
+    margin-left: 2px;
+    margin-right: 2px;
+    font-weight: 400;
+    font-size: 13px;
+    color: #fff;
+}

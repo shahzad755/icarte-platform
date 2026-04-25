@@ -1,0 +1,64 @@
+<resources>
+
+    <style name="AppThemeFullScreen" parent="AppTheme.Base">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="AppTheme" parent="AppTheme.Base">
+    </style>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/theme_window_background</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="alertDialogProTheme">@style/Theme.AlertDialogPro.Material</item>
+        <item name="adpButtonBarPositiveButtonStyle">@style/OrderSubmitDialogPositiveButton</item>
+
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textColorSecondary">@color/secondary_text</item>
+    </style>
+
+    <style name="CustomToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="android:textColorPrimary">@color/primary_text</item>
+        <item name="android:textColorSecondary">@color/primary_text</item>
+    </style>
+
+    <style name="CustomToolbarPopupTheme" parent="CustomToolbarTheme">
+        <item name="android:textColorPrimary">@color/blue</item>
+        <item name="android:colorBackground">@color/red</item>
+        <item name="android:color">@color/green</item>
+    </style>
+
+    <style name="OrderSubmitDialogPositiveButton" parent="Widget.AlertDialogPro.Material.Light.Button">
+        <item name="android:colorBackground">@color/primary</item>
+    </style>
+
+    <style name="OrderSubmitTextTheme" parent="Base.TextAppearance.AppCompat">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textColorSecondary">@color/secondary_text</item>
+        <item name="android:textColorHint">@color/primary_text</item>
+    </style>
+
+    <style name="ContactUsInputLayoutTheme" parent="Base.TextAppearance.AppCompat">
+            <item name="android:textColor">@color/primary_text</item>
+            <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="foodRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/food_ratingbar_full</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:maxHeight">46dp</item>
+    </style>
+
+    <style name="myDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+    </style>
+</resources>

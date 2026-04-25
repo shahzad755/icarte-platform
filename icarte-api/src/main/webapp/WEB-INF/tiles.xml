@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+
+    <!-- Master -->
+    <definition name="master.page" template="/WEB-INF/view/template/master.jsp">
+        
+        <put-attribute name="header" value="/WEB-INF/view/template/header.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/view/template/footer.jsp"/>
+        
+    </definition>
+    
+    <definition name="admin_home" extends="master.page" 	 >
+        <put-attribute name="body" value="/WEB-INF/view/adminHome.jsp" />
+    </definition>
+    
+</tiles-definitions>

@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="icarte.armedialab.com.icarte.ui.ContactusActivity"
+    android:background="@drawable/splash_screen">
+
+    <include android:id="@+id/toolbar" layout="@layout/app_bar">
+    </include>
+    <LinearLayout
+        android:id="@+id/mainLayoutContactUs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="@dimen/activity_vertical_margin_half"
+        >
+        <fragment
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:name="icarte.armedialab.com.icarte.ui.ContactUsFormFragment"
+            android:id="@+id/contact_form_fragment"
+            tools:layout="@layout/layout_contact_form_fragment"
+            android:layout_weight="0.6" />
+
+        <fragment
+            android:layout_width="340dp"
+            android:layout_height="match_parent"
+            android:name="icarte.armedialab.com.icarte.ui.ContactUsListFragment"
+            android:id="@+id/contact_address_fragment"
+            tools:layout="@layout/layout_contact_list_fragment" />
+    </LinearLayout>
+
+<!--    <fragment
+        android:id="@+id/mapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="icarte.armedialab.com.icarte.ui.ContactUsFormFragment"
+        tools:layout="@layout/layout_contact_map_fragment"
+        android:layout_below="@+id/mainLayoutContactUs"
+        android:layout_marginTop="@dimen/activity_vertical_margin_half"/>-->
+
+</RelativeLayout>

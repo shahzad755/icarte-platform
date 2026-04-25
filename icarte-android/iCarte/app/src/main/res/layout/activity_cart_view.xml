@@ -1,0 +1,194 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="icarte.armedialab.com.icarte.ui.CartViewActivity"
+    android:id="@+id/containerLayout">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_bar" />
+
+    <RelativeLayout
+        android:id="@+id/order_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/max_height_header"
+        android:background="@color/cartview_activity_background"
+        android:layout_below="@id/toolbar">
+
+        <ImageButton
+            android:id="@+id/btnClearCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ico_clear_cart_32"
+            android:contentDescription="@string/cart_view_clear_all"
+            android:layout_centerVertical="true"
+            android:background="@drawable/cart_button_background_selector"
+            android:layout_marginStart="@dimen/item_padding_top_bottom"
+            android:visibility="gone"
+            />
+
+        <!--        <com.ctrlplusz.anytextview.AnyTextView
+                    app:typeface="Bariol_Regular.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtClearAll"
+                    android:textColor="@color/primary_text"
+                    android:text="@string/cart_view_clear_all"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/item_padding_left_right"
+                     />-->
+
+        <com.ctrlplusz.anytextview.AnyTextView
+            app:typeface="Bariol_Regular.otf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtOrderTitle"
+            android:textColor="@color/primary_text"
+            android:text="@string/cart_view_order_label"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/txtOrderTitle"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true">
+
+            <com.ctrlplusz.anytextview.AnyTextView
+                android:id="@+id/textTotalOrderPriceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:typeface="breamcatcher.ttf"
+                android:text="@string/cart_view_order_total_label"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical" />
+
+            <com.ctrlplusz.anytextview.AnyTextView
+                android:id="@+id/textTotalOrderPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:typeface="breamcatcher.ttf"
+                android:layout_marginStart="@dimen/item_default_top_padding"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin_half"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/orderListRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/material_blue_grey_800"
+        android:layout_below="@id/order_header"
+        />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnSubmitOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ico_tick"
+        android:layout_gravity="bottom|end"
+        app:elevation="8dp"
+        app:pressedTranslationZ="12dp"
+        app:backgroundTint="@color/primary"
+        app:rippleColor="@color/fab_action_color"
+        app:fabSize="normal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="@dimen/fab_btn_bottom_margin"
+        android:layout_marginEnd="@dimen/fab_btn_end_margin"
+        android:visibility="gone"
+        />
+    <com.ctrlplusz.anytextview.AnyTextView
+        android:id="@+id/empty_view"
+        app:typeface="breamcatcher.ttf"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:text="@string/no_data_available" />
+
+</RelativeLayout>
+
+    <!--
+
+        <com.ctrlplusz.anytextview.AnyTextView
+            app:typeface="Bariol_Regular.otf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtOrderTitle2"
+            android:layout_below="@+id/txtOrderTitle"
+            android:layout_centerHorizontal="true"
+            android:maxLines="1"
+            android:textColor="@color/secondary_text"
+            android:text="@string/cart_view_order_label"
+            android:textStyle="bold"
+            android:textSize="35sp"
+            android:layout_marginTop="@dimen/activity_vertical_margin" />
+        <com.ctrlplusz.anytextview.AnyTextView
+            app:typeface="DK-Mango-Smoothie.otf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtOrderTitle3"
+            android:layout_below="@+id/txtOrderTitle2"
+            android:layout_centerHorizontal="true"
+            android:maxLines="1"
+            android:textColor="@color/secondary_text"
+            android:text="@string/cart_view_order_label"
+            android:textStyle="bold"
+            android:textSize="35sp"
+            android:layout_marginTop="@dimen/activity_vertical_margin" />
+        <com.ctrlplusz.anytextview.AnyTextView
+            app:typeface="Lobster-Regular.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtOrderTitle4"
+            android:layout_below="@+id/txtOrderTitle3"
+            android:layout_centerHorizontal="true"
+            android:maxLines="1"
+            android:textColor="@color/secondary_text"
+            android:text="@string/cart_view_order_label"
+            android:textStyle="bold"
+            android:textSize="35sp"
+            android:layout_marginTop="@dimen/activity_vertical_margin" />
+        <com.ctrlplusz.anytextview.AnyTextView
+            app:typeface="NoticiaText-BoldItalic.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtOrderTitle5"
+            android:layout_below="@+id/txtOrderTitle4"
+            android:layout_centerHorizontal="true"
+            android:maxLines="1"
+            android:textColor="@color/secondary_text"
+            android:text="@string/cart_view_order_label"
+            android:textStyle="bold"
+            android:textSize="35sp"
+            android:layout_marginTop="@dimen/activity_vertical_margin" />
+        <com.ctrlplusz.anytextview.AnyTextView
+            app:typeface="NoticiaText-Regular.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtOrderTitle6"
+            android:layout_below="@+id/txtOrderTitle5"
+            android:layout_centerHorizontal="true"
+            android:maxLines="1"
+            android:textColor="@color/secondary_text"
+            android:text="@string/cart_view_order_label"
+            android:textStyle="bold"
+            android:textSize="35sp"
+            android:layout_marginTop="@dimen/activity_vertical_margin" />
+    -->

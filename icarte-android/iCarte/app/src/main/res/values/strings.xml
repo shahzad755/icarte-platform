@@ -1,0 +1,147 @@
+<resources>
+    <string name="app_name">iCarte Menu</string>
+    <string name="title_activity_splash_screen">iCarte</string>
+
+    <string name="loading">Loading…</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_activity_device_registration">" Register your License"</string>
+
+    <string name="str_restaurant_code">Enter Restaurant Code</string>
+    <string name="str_activation_code">Enter Activation Code</string>
+    <string name="title_activity_categories">iCarte Menu</string>
+
+    <string name="standard">Standard</string>
+
+    <string-array name="comment_types">
+        <item>General</item>
+        <item>Inquiry</item>
+        <item>Complaint</item>
+    </string-array>
+
+    <string-array name="jazzy_effects">
+        <item>Curl</item>
+        <item>@string/standard</item>
+        <item>Grow</item>
+        <item>Cards</item>
+        <item>Wave</item>
+        <item>Flip</item>
+        <item>Fly</item>
+        <item>ReverseFly</item>
+        <item>Helix</item>
+        <item>Fan</item>
+        <item>Tilt</item>
+        <item>Zipper</item>
+        <item>Fade</item>
+        <item>Twirl</item>
+        <item>SlideIn</item>
+    </string-array>
+    <string name="title_activity_category_list2">Choose from Menu</string>
+    <string name="title_cart">Cart</string>
+    <string name="title_activity_items_category">Unleash your taste buds</string>
+    <string name="title_call_waiter">Call Waiter</string>
+    <string name="title_navigate_home">Navigate to Home</string>
+    <string name="title_your_order">Your Order</string>
+    <string name="add_to_order">Add to Order</string>
+    <string name="dialog_fragment_title">Customize Your Order..</string>
+    <string name="label_quantity">Quantity: </string>
+    <string name="label_item_variant">Select from Available Options</string>
+    <string name="label_item_addons">Add Sides to Your Order</string>
+    <string name="cancel_item_config_dialog_title">Cancel</string>
+    <string name="save_item_title">Save to Order</string>
+    <string name="special_instructions">Specify any special instructions</string>
+    <string name="txt_image_slider">Image Slideshow</string>
+    <string name="close">Close</string>
+    <string name="item_image_slider">Slide Show</string>
+    <string name="title_activity_cart_view">Order Checkout</string>
+    <string name="cart_view_order_label">Order Details</string>
+    <string name="cart_view_order_total_label">Total:</string>
+    <string name="help_decrease_qty">Press to decrease quantity</string>
+    <string name="help_increase_qty">Press to increase quantity</string>
+    <string name="no_data_available">There are no items in your Order!!! Add some and then come back here…</string>
+    <string name="order_item_already_existing">This item already exists in your order. You can modify/change it below.</string>
+    <string name="zero_qty_not_allowed">Please select minimum quantity of</string>
+    <string name="item_added_to_order_success_msg"> has been successfully added to your Order..</string>
+    <string name="maximum_order_item_level_reached">You have already reached maximum order quantity for</string>
+    <string name="help_delete_item_from_cart">Remove item from your cart</string>
+    <string name="help_configure_item_in_cart">Modify item in your order or add any special instructions</string>
+    <string name="item_updated_in_order_success_msg"> has been successfully updated..</string>
+    <string name="title_table_ref_number">Please Enter the Table Numebr</string>
+    <string name="title_order_confirmation_dialog">Order Confirmation…</string>
+    <string name="msg_confirm_order">Please confirm your order</string>
+    <string name="label_btn_place_order_confirmation_dialog">Place Order</string>
+    <string name="label_btn_cancel_confirmation_dialog">Cancel</string>
+    <string name="title_contact_number">Enter Your Contact#</string>
+    <string name="contact_number_error_message">Please Enter Your Contact Number</string>
+    <string name="table_ref_error_message">Sorry for inconvenience!! Your Table Number has not been specified by our hospitality staff. Please ask for further assistance from our staff</string>
+    <string name="order_submitted_success">Your order has been submitted..</string>
+    <string name="order_submitted_failed">Unfortunately your order cannot be submitted due to some technical error. Please contact the staff.. Sorry for the inconvenience..</string>
+    <string name="title_activity_order_reciept">Order Receipt</string>
+
+    <string name="response_qr_code_descr">...</string>
+    <string name="order_response_title">Yum! Your order has been successfully placed..</string>
+    <string name="receipt_display_error">Unfortunately due to some technical error your order information cannot be submitted. No worries, you can just give your contact number you entered while placing order to our staff at the desk and they will help you</string>
+    <string name="txt_order_preparation_time">Your Yummy meal will be served in:</string>
+    <string name="txt_order_ref_number_title">Order Reference#:</string>
+    <string name="label_btn_got_it">OK Got it.</string>
+    <string name="error_no_connection">Network Connection cannot be established. Please check if you are connected to internet. Press retry to try again…</string>
+    <string name="error_host_unreachable">Due to some technical issues the server is not reachable. Please check if you are connected to internet. Press retry to try again…</string>
+    <string name="error_no_connection_cart_activity">Network Connection cannot be established. Please check if you are connected to internet and try again</string>
+    <string name="action_settings">Choose language</string>
+    <string name="cart_view_clear_all">Clear Cart</string>
+    <string name="title_activity_customer_feedback">We value your feedback</string>
+
+    <string name="title_submit_feedback">Submit Feedback</string>
+    <string name="hello_world">Hello world</string>
+    <string name="hint_feedback_comment">Please provide your feedback here..</string>
+    <string name="cartview_clear_all_confirm_msg">\"Are you sure you want to remove all items from your order?\"</string>
+    <string name="label_btn_yes">Yes</string>
+    <string name="label_btn_no">No</string>
+    <string name="feedbackView_navigate_away_msg">Are you sure you don\'t want to share your valuable feedback with us?</string>
+    <string name="label_btn_ok">OK</string>
+    <string name="feedbackView_validation_error">You have missed some feedback questions, kindly fill and then submit again.</string>
+    <string name="feedback_submitted_success">We have received your feedback. Thank you very much for sharing, we value your feedback and will improve our services further in light of your feedback</string>
+    <string name="feedback_submitted_failure">We apologise for inconvenience. Due to some technical failure we cannot serve your request at the moment. Please close this dialog box and retry or contact our staff for assistance</string>
+    <string name="title_activity_contactus">Contact Us</string>
+    <string name="title_customer_name">Enter Your Name</string>
+    <string name="label_comment_type">Please select type of your query…</string>
+    <string name="title_submit_comments">Submit Your Comments</string>
+    <string name="title_edit_comments">Your Valuable Comments…</string>
+    <string name="commentsView_submit_form_msg">Are you sure you want to submit your comments?</string>
+    <string name="contactus_submitted_success">We have received your comments. Thank you very much for sharing, we value your feedback and will improve our services further in light of your comments</string>
+    <string name="customer_name_empty_error">Please enter your Name!</string>
+    <string name="customer_comment_empty_error">Please specify your comments!</string>
+    <string name="title_our_branches">Our Branches</string>
+    <string name="title_click_to_location">Click to see location</string>
+    <string name="call_waiter_msg">Press \'Yes\' to call your waiter/attendant. Press \'No\' to cancel.</string>
+    <string name="call_waiter_success_msg">Your waiter/attendant will be with you soon. Thank you for your patience.</string>
+    <string name="title_menu_btn">Menu</string>
+    <string name="title_event_btn">Events</string>
+    <string name="title_aboutus_btn">About Us</string>
+    <string name="title_rating_btn">Feedback</string>
+    <string name="title_contactus_btn">Contact Us</string>
+    <string name="title_activity_event_listing">News and Events</string>
+    <string name="title_login">Login</string>
+    <string name="title_staff_user_name">User Name</string>
+    <string name="title_staff_password">Password</string>
+    <string name="password_error_message">Please enter your password</string>
+    <string name="username_error_message">Please enter user name</string>
+    <string name="login_successfull">You have successfully logged in!</string>
+    <string name="login_failed">Username and password did not match our records. Please try again with correct username and password.</string>
+    <string name="title_attention">Attention!!</string>
+    <string name="title_activity_configuration">Change Configuration</string>
+    <string name="title_save">Save</string>
+    <string name="configuration_settings_submit_form_msg">Are you sure, you want to set the given table number?</string>
+    <string name="str_device_reg_code">Enter Device Registration Code</string>
+    <string name="error_account_blocked">This account is blocked or de-activated. Please contact administrator for details..</string>
+    <string name="label_txt_customer_name">Your Name</string>
+    <string name="label_txt_customer_contact">Contact#</string>
+    <string name="label_txt_customer_email">Email</string>
+    <string name="label_txt_customer_fname">First Name</string>
+    <string name="label_txt_customer_lname">Last Name</string>
+    <string name="feedbackView_customer_validation_error">Please ensure you have entered your details (Name, Contact, Email)!</string>
+    <string name="name">Name:</string>
+    <string name="staffCode">Staff Code:</string>
+    <string name="customer_contact_empty_error">Please enter your contact number</string>
+    <string name="instance_id">Instance ID:</string>
+
+</resources>

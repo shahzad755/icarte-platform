@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="icarte.armedialab.com.icarte.ui.CategoryListActivity">
+
+    <item android:id="@+id/order"
+        android:title="@string/title_your_order"
+        android:icon="@drawable/ico_cartx48"
+        android:orderInCategory="200"
+        app:actionLayout="@layout/menu_badge_custom"
+        app:showAsAction="always">
+    </item>
+    <item android:id="@+id/navigate_home"
+        android:title="@string/title_navigate_home"
+        android:icon="@drawable/ico_home_white"
+        android:orderInCategory="200"
+        app:showAsAction="always">
+    </item>
+    <item android:id="@+id/callWaiter"
+        android:title="@string/title_call_waiter"
+        android:icon="@drawable/ico_bell_white"
+        android:orderInCategory="200"
+        app:showAsAction="always">
+    </item>
+    <item android:id="@+id/language"
+        android:title="@string/action_settings"
+        android:orderInCategory="200"
+        app:showAsAction="always"
+        />
+</menu>

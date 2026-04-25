@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_item_activity"
+    tools:context="icarte.armedialab.com.icarte.ui.ItemsListActivity">
+
+    <include android:id="@+id/toolbar" layout="@layout/app_bar">
+    </include>
+
+    <fragment
+        android:layout_width="@dimen/category_in_productview_width"
+        android:layout_height="match_parent"
+        android:name="icarte.armedialab.com.icarte.ui.CategoriesFragment"
+        android:id="@+id/categoriesFragment"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentStart="true"
+        tools:layout="@layout/layout_fragment_categories"
+        />
+
+    <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:name="icarte.armedialab.com.icarte.ui.ItemsFragement"
+        android:id="@+id/itemsFragment"
+        android:layout_below="@+id/toolbar"
+        tools:layout="@layout/layout_fragment_items"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/categoriesFragment" />
+
+
+</RelativeLayout>

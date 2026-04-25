@@ -1,0 +1,33 @@
+<com.andexert.library.RippleView
+    android:id="@+id/more"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/grid_item_height"
+    android:padding="@dimen/grid_item_spacing"
+    app:rv_color="@color/white"
+    android:background="@drawable/category_item_selector_background"
+    rv_centered="true">
+
+    <com.android.volley.ui.NetworkImageViewPlus
+        android:id="@+id/imgCategory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        />
+
+    <icarte.armedialab.com.icarte.ui.component.CarteTextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtCategoryTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:textSize="32sp"
+        android:textAlignment="center"
+        android:background="@color/list_background"
+        android:textColor="@color/list_item_title"
+        android:gravity="center|bottom"
+        android:maxLines="2"
+        android:padding="15dp"
+        />
+</com.andexert.library.RippleView>

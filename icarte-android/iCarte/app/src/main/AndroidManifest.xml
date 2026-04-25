@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="icarte.armedialab.com.icarte" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="false" />
+
+    <application
+        android:name=".ApplicationController"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".ui.SplashScreenProgressBarActivity"
+            android:label="@string/title_activity_splash_screen"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.HomeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppThemeFullScreen" >
+        </activity>
+        <activity
+            android:name=".ui.DeviceRegistrationProgressBarActivity"
+            android:label="@string/title_activity_device_registration"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name=".ui.CategoryListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_categories"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name=".ui.ItemsListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_items_category" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.CategoryListActivity" />
+        </activity>
+        <activity
+            android:name=".ui.ItemImageSliderActivity"
+            android:label="@string/item_image_slider"
+            android:screenOrientation="user"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ui.CartViewActivity"
+            android:label="@string/title_activity_cart_view"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.CategoryListActivity" />
+        </activity>
+        <activity
+            android:name=".ui.OrderReceiptActivity"
+            android:label="@string/title_activity_order_reciept"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".ui.CustomerFeedbackActivity"
+            android:label="@string/title_activity_customer_feedback"
+            android:parentActivityName=".ui.HomeActivity"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="icarte.armedialab.com.icarte.ui.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".ui.ContactusActivity"
+            android:label="@string/title_activity_contactus"
+            android:parentActivityName=".ui.HomeActivity"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="icarte.armedialab.com.icarte.ui.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".ui.EventListingActivity"
+            android:label="@string/title_activity_event_listing"
+            android:parentActivityName=".ui.HomeActivity"
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="icarte.armedialab.com.icarte.ui.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".ui.ConfigurationActivity"
+            android:label="@string/title_activity_configuration"
+            android:parentActivityName=".ui.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="icarte.armedialab.com.icarte.ui.HomeActivity" />
+        </activity>
+    </application>
+
+</manifest>

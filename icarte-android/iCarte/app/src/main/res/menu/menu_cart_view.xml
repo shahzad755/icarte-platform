@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="icarte.armedialab.com.icarte.ui.CartViewActivity">
+    <item android:id="@+id/navigate_home"
+        android:title="@string/title_navigate_home"
+        android:icon="@drawable/ico_home_white"
+        android:orderInCategory="200"
+        app:showAsAction="always">
+    </item>
+    <item android:id="@+id/callWaiter"
+        android:title="@string/title_call_waiter"
+        android:icon="@drawable/ico_bell_white"
+        android:orderInCategory="200"
+        app:showAsAction="always">
+    </item>
+</menu>

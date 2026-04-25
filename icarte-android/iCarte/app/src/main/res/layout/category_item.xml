@@ -1,0 +1,43 @@
+<com.andexert.library.RippleView
+    android:id="@+id/more"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/category_in_productview_width"
+    android:clipChildren="false"
+    android:layout_margin="@dimen/category_in_productview_margin"
+    android:elevation="@dimen/default_elevation"
+    android:focusable="true"
+    android:clickable="true"
+    android:background="@drawable/category_item_selector_background"
+    app:rv_color="@color/white"
+    rv_centered="true"
+    app:rv_type="simpleRipple"
+    app:rv_alpha="150"
+    android:padding="@dimen/item_padding_left_right"
+    >
+
+        <com.android.volley.ui.NetworkImageViewPlus
+            android:id="@+id/imgCategory"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            app:default_image="@drawable/img_placeholder"
+            app:error_image="@drawable/logo"
+            android:focusable="true"
+            android:clickable="true"
+            android:tint="@color/tint_background"
+            />
+
+        <icarte.armedialab.com.icarte.ui.component.CarteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtCategoryTitle"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:textSize="28sp"
+            android:textColor="@color/primary_text"
+            android:maxLines="2"
+            android:paddingBottom="15dp"
+            android:gravity="center" />
+</com.andexert.library.RippleView>

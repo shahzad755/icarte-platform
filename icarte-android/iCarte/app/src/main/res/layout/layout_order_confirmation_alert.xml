@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/layoutOrderConfirmationAlert"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/containerConfirmationDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/layoutEditContactNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin_half"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:gravity="start"
+            app:hintTextAppearance="@style/OrderSubmitTextTheme">
+            <EditText
+                android:id="@+id/editContactNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="viewStart"
+                android:inputType="number"
+                android:hint="@string/title_contact_number"
+                />
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+    <me.fichardu.circleprogress.CircleProgress
+        android:id="@+id/progressCart"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:color1="@android:color/holo_red_light"
+        app:color2="@android:color/holo_green_light"
+        app:color3="@android:color/holo_blue_light"
+        android:visibility="invisible"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerInParent="true" />
+</RelativeLayout>

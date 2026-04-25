@@ -1,0 +1,58 @@
+
+<%@ page import="com.armedialab.entity.StatusType" %>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="layout" content="main">
+		<g:set var="entityName" value="${message(code: 'statusType.label', default: 'StatusType')}" />
+		<title><g:message code="default.list.label" args="[entityName]" /></title>
+	</head>
+	<body>
+		<g:render template="/layouts/pageheader"/>
+		<g:if test="${flash.message}">
+			<div class="message alert alert-info alert-dismissable" role="status">
+               <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+               <strong>Info!</strong> ${flash.message}
+             </div>
+		</g:if>
+		<div class="portlet light bordered">
+             <div class="portlet-title">
+                 <div class="caption font-dark">
+                     <i class="icon-list font-dark"></i>
+                     <span class="caption-subject bold uppercase">
+                     	<g:message code="default.list.label" args="[entityName]" />
+                     </span>
+                 </div>
+                 <div class="tools"> </div>
+             </div>
+             <div id="list-accountType" class="portlet-body" role="main">
+				<table class="table table-striped table-bordered table-hover dt-responsive" style="width:100%" id="sample_1">
+					<thead>
+						<tr>
+						
+							<th class="all"><g:message code="statusType.name.label" default="Name" /></th>
+						
+							<th class="all"><g:message code="statusType.isActive.label" default="Is Active" /></th>
+						
+							<th class="all"><g:message code="statusType.description.label" default="Description" /></th>
+						
+						</tr>
+					</thead>
+					<tbody>
+					<g:each in="${statusTypeInstanceList}" status="i" var="statusTypeInstance">
+						<tr>
+						
+							<td><g:link action="show" id="${statusTypeInstance.id}">${fieldValue(bean: statusTypeInstance, field: "name")}</g:link></td>
+						
+							<td><g:formatBoolean boolean="${statusTypeInstance.isActive}" /></td>
+						
+							<td>${fieldValue(bean: statusTypeInstance, field: "description")}</td>
+						
+						</tr>
+					</g:each>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

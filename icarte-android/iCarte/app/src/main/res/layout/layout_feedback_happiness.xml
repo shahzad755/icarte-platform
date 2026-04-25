@@ -1,0 +1,80 @@
+<LinearLayout
+    android:id="@+id/layoutParentContainerHappinessFeedback"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/activity_vertical_margin_half"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.ctrlplusz.anytextview.AnyTextView
+        android:id="@+id/txtFeedackQuestion"
+        app:typeface="NoticiaText-BoldItalic.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textColor="@color/primary_text"
+        android:layout_gravity="center_vertical"
+        android:gravity="start" />
+    <LinearLayout
+        android:id="@+id/layoutContainerHappinessFeedback"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical">
+
+        <net.soulwolf.widget.materialradio.MaterialRadioGroup
+            android:id="@+id/happinessRadioGroup"
+            android:layout_width="match_parent"
+            android:gravity="start"
+            android:layout_marginTop="@dimen/activity_vertical_margin_half"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <net.soulwolf.widget.materialradio.MaterialRadioButton
+                android:id="@+id/feedBackHappy"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:mcPadding="5dp"
+                app:mcAnimator="true"
+                app:mcButton="@drawable/radio_button_happy_selector"/>
+
+            <net.soulwolf.widget.materialradio.MaterialRadioButton
+                android:id="@+id/feedBackNeutral"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_height="match_parent"
+                app:mcAnimator="true"
+                app:mcPadding="5dp"
+                app:mcButton="@drawable/radio_button_neutral_selector"/>
+
+            <net.soulwolf.widget.materialradio.MaterialRadioButton
+                android:id="@+id/feedBackSad"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_height="match_parent"
+                app:mcAnimator="true"
+                app:mcPadding="5dp"
+                app:mcButton="@drawable/radio_button_sad_selector"/>
+
+        </net.soulwolf.widget.materialradio.MaterialRadioGroup>
+        
+<!--        <ImageButton
+            android:id="@+id/imgBtnHappy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/star_big_on"/>
+        <ImageButton
+            android:id="@+id/imgBtnNeutral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/star_big_off"/>
+        <ImageButton
+            android:id="@+id/imgBtnSad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_star_big_off"/>-->
+
+
+    </LinearLayout>
+</LinearLayout>

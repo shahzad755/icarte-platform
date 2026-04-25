@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="icarte.armedialab.com.icarte.ui.ContactUsListFragment"
+    android:clipToPadding="false"
+    android:paddingStart="@dimen/activity_vertical_margin_half"
+    android:paddingEnd="@dimen/activity_vertical_margin_half"
+    android:orientation="vertical">
+
+    <com.ctrlplusz.anytextview.AnyTextView
+        android:id="@+id/txtOurBranches"
+        app:typeface="NoticiaText-BoldItalic.ttf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="@color/primary_text"
+        android:text="@string/title_our_branches"
+        android:layout_marginTop="@dimen/item_padding_top_bottom"
+        android:layout_marginBottom="@dimen/item_padding_top_bottom"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/contactUsListInFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        />
+</LinearLayout>

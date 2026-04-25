@@ -1,0 +1,1711 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.14
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Dec 28, 2017 at 04:57 PM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: 'restaurant'
+--
+CREATE DATABASE IF NOT EXISTS restaurant DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE restaurant;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'account_type'
+--
+
+DROP TABLE IF EXISTS account_type;
+CREATE TABLE IF NOT EXISTS account_type (
+  ACCOUNT_TYPE_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  `NAME` varchar(255) NOT NULL,
+  DESCRIPTION varchar(500) DEFAULT NULL,
+  DATE_CREATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CREATED_BY bigint(20) NOT NULL,
+  LAST_UPDATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  PRIMARY KEY (ACCOUNT_TYPE_ID),
+  UNIQUE KEY NAME_UNIQUE (`NAME`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table 'account_type'
+--
+
+INSERT INTO account_type (ACCOUNT_TYPE_ID, NAME, DESCRIPTION, DATE_CREATED, CREATED_BY, LAST_UPDATED, UPDATED_BY) VALUES
+(1, 'xGyKVboFbtamWVVmKMCNLtuMGymzilUzEItQBsrvRVmtTwAogYrTarnuwJnmRxtTQjSqeDbtohcQRSIlKGfqMfbUvfbbCsPuNerHyZrXqORjsMoRNUucTFecEjlnrPNSiegDthvDQmiiGLTtaPPymBVdEPlcylhUekNhgAMBUANsXTBHIPyygQVvhRTuBXAmpYwMYWszOqDrisuRfIAfnGYFuxFWSYDKVMKwomBEyBGnqppIdBWpucoByuPztXh', 'RroudvnVYCnYaKzVAZbBIUbOZPcRiswNEhMgyUElrkVklNsyxPNULTeKXNaPrsTzKzfNaHHrBcYhsguqKLmcqjwcgMLcjyFzoRTWQPZeWnebyOPzyQEboWuFzIdNVMqhtjUUcDciJOYsUdtYYIDLoZCQfgIBtkugurStlgxCZsgAsmDBPLnCXKlDKLHycHiUfjgOgyudCNlBEOESBcxFTXlAWGHEdXesjFbrnDEbJEsVWfHxkAFysaxaAhAOUmJSHzrglBQESmWGqvtIDmxOqddJDcGrYjjLLqGPKRFZWozyWrlhsGwMydwXZCkdZhxNQTJPEbJQMUntGEqavmLACOoCfjAxzGHJIkhkXuGcrBbneatnKbKuEKmPonuEFJThrtMtfKoBGHpdFDPRbgCkiRKpIhBFOLodJqWBZnjpzbqzvsszMJjIJYyCixmuOhtqDDyPjopiXvdfSYFnFlBDyRUtyOOVRiaOpfZoPCfAcdgwfdBMlAeg', '2017-12-24 16:48:48', 0, '2017-12-24 16:48:48', NULL),
+(2, 'OhtYZGmeScKqWOkmnUDMnwsxsdGMxqJEYPtWXvxlaulgSIbuJWnbFOVLzBjxtoFozyfqerlPNivHxiTfFEBqyFsAQksCewsIwvANEhfbbwKispdQGqotQTctMrBiLHapXEwACpjSmdYjytIBDgHtCQEgcJCdqaPqTbBYuDzlOZHpRojgsjJjkAFYOufmPFVOHTRrOUgFvwyqBuILDSBsogbqkmTkfhNMNVobWfuTjUGjKqLTfjItBbJmvvopAQa', 'GELWXpwTyrANBAJQhNdGCQPZvNSXwvmuNUjnmmEWonPJtTBRCllBOQGCpzbsDxxXuNjgrHdLhlXOfONSeXhQbgunZDMkFbMMWsEejtccxvYKEunqebcBqQNuMMDRzgMdYUKCOaLmYhLrBsgPAFTHRkBgmWNZLqhBgCpaLutmpIUokGFrieAppJClOIphAlUGQnCtFcuyglgInQbYCLkXobxpofNCfONXnQzIaYncFQVcWLwwNdDxPyailhoGGsVFzNPNlnXNeUqKEEkOayzDoYvLStZPPZVmSihnummpktZlMqZpKnQenZFdgnrKAMDqXBPNpnmihLrbhALOPAOISRxOtKHDqaLpXFGtgDtdmyQRHWaUiSVRUGepLbiSSWzhDYwRdlCIHIIMVXofKtvWnbStHvCmJRuWYcBSXPSWRCcPjKmTQTPibbGlzgkXDpyuqLutAkgEpGTxdSfleRBlETeZdnzgKhzmXkZLlMPMSlQUQjlsaJaU', '2017-12-24 16:48:48', 0, '2017-12-24 16:48:48', NULL),
+(3, 'vwgCTCgmWHWCtvfWEAALJYktEeKlCWfNLWcrmeZQBrLdVCEKMgBsPEjlfFvKOYWAevtSZrFlYUBHptctLpvmzflhXBvxfSfxhXQTcOAZNsXruydOYJkmAnLqyRaveiebFwSPRFQbuIUNBVnLJUnQnVfynBdgKGExwOrencURRhNMqpCeWuyLdjjdslVGvlUHeURfGDghUUGTwTUlSqGSCQXqLdlUZboClYSyOWVvZoyHmEsxiWuVXueIrAMqalQ', 'JQszlVUKuCKxYcCcMvNoZePDoKrFALyAAyzRzDRGUUPMKAciqfuzoLODFxiwhegmcEuZceSBaselRcaKhLfhYPHhVxrVRQWHTDveEYuPcVRppPDNoMtTWnqyVcmsRjGmzPImyKqIKJHmBGASreBXeYkjoXizbrwpjuIVMLrJPqRWSojlrXMbwfUdqpkwXVFjkuaIsTToZHNhvAUvJfzqFjkerUgBJHojKsJDcOXBEtzEEQkAHTUbdpUFnHZXJxOtxNiICJIPCPRAGCXjxtQXteHctpDIsdmXGCFsKMHPKZXwHTSVRnnDNssCcWmPliZmCNJbbPJNbHFSifTjjVShqCitIGmqTqgUdjXdObBTHVteCuoelWQmJREplmdquBIDVZfCPMcwXThfEMQgNWwuUWaNgdMyEtMPrtHmYXOXOfYttwoljGLkAVUGyAEnbCmekzgiyzYXaFrOKuzxuwqihaaYOJAmArgXAmadzWzchqOjqbGELwvX', '2017-12-24 16:48:48', 0, '2017-12-24 16:48:48', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'addon'
+--
+
+DROP TABLE IF EXISTS addon;
+CREATE TABLE IF NOT EXISTS addon (
+  ADDON_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  IS_ACTIVE int(1) DEFAULT '1',
+  DEFAULT_PRICE decimal(5,3) NOT NULL,
+  RESTURANT_ID bigint(20) NOT NULL,
+  IMAGE_URL varchar(255) DEFAULT NULL,
+  DATE_CREATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CREATED_BY bigint(20) NOT NULL,
+  UPDTAED_BY bigint(20) DEFAULT NULL,
+  LAST_UPDATED datetime DEFAULT NULL,
+  PRIMARY KEY (ADDON_ID),
+  KEY FK_ADDON_REST (RESTURANT_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table 'addon'
+--
+
+INSERT INTO addon (ADDON_ID, IS_ACTIVE, DEFAULT_PRICE, RESTURANT_ID, IMAGE_URL, DATE_CREATED, CREATED_BY, UPDTAED_BY, LAST_UPDATED) VALUES
+(1, 1, '1.100', 1, 'URL', '0000-00-00 00:00:00', 0, NULL, NULL),
+(2, 1, '4.100', 1, 'URL', '0000-00-00 00:00:00', 0, NULL, NULL),
+(3, 1, '0.000', 1, 'URL', '0000-00-00 00:00:00', 0, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'addon_translation'
+--
+
+DROP TABLE IF EXISTS addon_translation;
+CREATE TABLE IF NOT EXISTS addon_translation (
+  ADDON_TRNASLATION_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  TITLE varchar(255) NOT NULL,
+  DESCRIPTION varchar(255) DEFAULT NULL,
+  LANGUAGE_ID bigint(20) NOT NULL,
+  SHOW_DESCRIPTION int(1) DEFAULT '0',
+  ADDON_ID bigint(20) NOT NULL,
+  PRIMARY KEY (ADDON_TRNASLATION_ID),
+  KEY FK_ADDONTRA_LAN (LANGUAGE_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table 'addon_translation'
+--
+
+INSERT INTO addon_translation (ADDON_TRNASLATION_ID, TITLE, DESCRIPTION, LANGUAGE_ID, SHOW_DESCRIPTION, ADDON_ID) VALUES
+(1, 'ENG Title', 'ENGLISH', 1, 860556888, 1),
+(2, 'ARABIC Title', 'Arabic Desc', 2, 886338792, 1),
+(3, 'Urdu Title', 'Urdu Desc', 3, 1287610027, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'address'
+--
+
+DROP TABLE IF EXISTS address;
+CREATE TABLE IF NOT EXISTS address (
+  ADDRESS_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  DESCRIPTION varchar(255) NOT NULL,
+  STREET varchar(255) DEFAULT NULL,
+  AREA varchar(255) DEFAULT NULL,
+  CITY varchar(255) DEFAULT NULL,
+  COUNTRY varchar(50) DEFAULT NULL,
+  PO_BOX varchar(15) DEFAULT NULL,
+  PHONE1 varchar(20) DEFAULT NULL,
+  PHONE2 varchar(20) DEFAULT NULL,
+  PHONE3 varchar(20) DEFAULT NULL,
+  PHONE4 varchar(20) DEFAULT NULL,
+  LAT varchar(25) DEFAULT NULL,
+  LON varchar(25) DEFAULT NULL,
+  IS_ACTIVE int(1) DEFAULT '1',
+  EMAIL varchar(50) DEFAULT NULL,
+  MAPS_URL varchar(255) DEFAULT NULL,
+  PRIMARY KEY (ADDRESS_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table 'address'
+--
+
+INSERT INTO address (ADDRESS_ID, DESCRIPTION, STREET, AREA, CITY, COUNTRY, PO_BOX, PHONE1, PHONE2, PHONE3, PHONE4, LAT, LON, IS_ACTIVE, EMAIL, MAPS_URL) VALUES
+(1, 'clvJYnTgWGGDFBgBTXiNoQWpiqrwCggnZQUgtTpqaxjNvZckItLfBnHkfEvxrosjPmUezqUlfzIbmwQGghPznbOvGDqXzkwbnbJzHVjVSmpXyWConnJBGuPwVzlMDKmDaCPWZOQSplCZKHDdrRlnhFnbtkfMAOMDsZJMgFWFIBMYKNmyprKnWiiVgUjsTRqsSvXIkODnQOuhBpROjNavTbDrIrOYJgyVUCMXYmifcdhMRiIaRShWhyPSBmdfOPB', 'fuRZGcJEPgZqZQcTzgseSlxGuRObgYiVqrFPySRuZtvnRjRlUYtFpbaYatckVNEOGtrqMFCfaPhanDXbSIWEmgeAQQQmuQiYWiwVXGTCbjONqxlCYxuSviOeWshbXEgaBxgxaqpdWkWWwsENXkWSsNrpshMPvUTUhKtMvFJHzhuOPDcKFcviVlqYQmWDvDCpcaqbVZUmzfNYLUmlRkGNuScrbDzCPJBkotHrFnTmMcWEZZpFGCrNTIRfRjCfjkr', 'WadejQlPxDItEtAcCFmkXwzYobixqISfixKiEiRTcwUWthyTQiOYNCOApCyCLLKGvpEngWHhNdTvsvKhwcqyKLKjrOTaghYxfHCQAYsJYgyGvBfJNqgEooxNHTNhSUuIyaXRobewcypiBBWhDTYHpjaRvYlkVVCPlWngiEmfpCuhVvTELeUgBdZORWiiYYVWWrZPOasleOjJFFSSCsAMwYBxKWiHjvidwrfutbTvfRaiubSvqqXefPRMEJtuSee', 'tvHmYWhDkrqlzaExTXzAMWopivXInvAkUReKDPRCzpjLRIYfhbbWBGFGjhubuYsqnNEFjQKLOjHmdYLjrpinQROBccPOAWwRDtRvHWuyhkKYpVpveNpbXLANeGbpztKPkDZVCcSQxWBTULmhLJnpgbjehRfHIAeJmCxvSJwfbFCRKqEQqpaePUczHTrqAEirMfQauuKDPPmjQwDxfDvUaHfGBmXbxLMNGVgwhdroJqtjduKlUGQzxicVArWJcPZ', 'OZjsEAaZzUWvbUYcNwgYRaPkjvidJgkPguBUMupVqppOWwqxsu', 'JsEOFrypgKlYuyy', 'MWOCtNrIkDzRKBzeNZrB', 'EkJQRtvHqyxlqnoHFnur', 'bjGFxuPDzcCWaLTopWwm', 'lIqVDfdwoVRXKSkALBsK', 'OXQbvDDkaFHiFaolzAaEjtXIr', 'AFDBFeEynHrEnmeGSNkPiBUSf', 112359469, 'pSlINqiNBsqFxiIGuDBgTywGizgTtVkzkwgQTFUuuMVHSXLRWu', NULL),
+(2, 'msIfHHGSPiiHzgtsIIpLfrhlehkixnukfvrKstlrkuAcRyfaICQjcisVYERvjhsoBBGozetfTdaiTkugTSRwcdInqAywDhqTOgTsEKGWymXwFFAwDiwcgqusrkZbIHWoLthAWRBJawdoYLnjZBUsgVyPdTSmKoKXgVPzcfhGawRzIdylfuprbLxGjlollXvgyMrWxCdMLyNjXtrrKHBzZIoLSJyPPzXHewwUGhbAQUYneWDogUNsSBsEcHxWHBY', 'fXovRqUglMtPbTYuLlozCTtPRVpCysBmDKvVScHOnNYLuQnzJAQfRKaxgCmUSdHtbaqBMIjnKYFBktQIPWwFFRfFzYNOwthsMrUnyzguISKNJaLowLmOfQDkWzJKAeJfXOarcDUlExFjVALsxWwTRUqILujiLpIQzBzArxnLqXlrrKMstjZjiChQYGSgEhjoBYNowuIQXTMNrMFuzoLsjMBkXEJolGzgsAvperZWlAyIQmBEuENOsNJfyvHuJaN', 'YoGFuHdpHWGBkCZSBUlAttdHXuTOYSuDtwpqKmWLTOnkwTfxDUSfVnwLJyZCcyGcbwLbiPWCleIvwUofJbQClZopiVwEdlKKgecCGBvAuHYmFLYkFvjskexDbPptUDMEgVSTZwhtfhcbLwsQWxTZdIdiwEWACgvgMGdGozLPkBFoIZVLwhtctVMbVrQbDAAKBhswsUqNXquZkRZaIiukWlTKZQFlUuSTLybvhoaDKlyaYIJLwnRprQhLKZKGElZ', 'jRnacVOJFCTrpkZEdkMjNAhkUucBFuZstqEspJnjxPhiGVkcuinrVZCPoNQKgzpcMbkBtFINrROOEMmGyjPRCybXBYkfTSyTLzyhDHNSIRaVPsTZqjsZEhvCfbPhTMSWkaDOxKtdkNhjiWSZcAZTGXCwFphUossUgSIkXDRqZKJGIgOTCGzxoCgJFLmESwQbJsLeIJQBpIDIyzbjtJHIorKnSpjIYgGODnDCegjkMmjbZUGblUIiAOPKIzXrPDo', 'DepLoGBQVpZNnuTySabCZYoVuBUmaZZnpEylyLJolgJSDHafvO', 'qghhxGLPmiWCByM', 'SrCYDtfVaUkSOWRrNozG', 'UNtqqAfPcUFTTaFBfXwq', 'BQhXdeeDjNhvXsjBAzmv', 'yDXcABGuVIcdvukaZZzJ', 'uJUewgzCBMqrBBQSetKmgFHOW', 'JdfdVGDxHXmBwGSnadmFFnBue', 1489748108, 'UGhbtsiqEKKdcQmbVKejKcQCKOCyykOMfALWBEQKdApAetVOgX', NULL),
+(3, 'JEptTrtPeARMdKaWCRxdrLsXBLeedWCZofErBsCdcnEXaAOremrfAfwyRSwzpjJjefcfCdJGEeuGmWKjUlFSGLdOakOLHQhAjReTdHeWTRbaiWjICnttRnyPPFBPJVGysVbMoDMfdGMxKWtJFKQSNiOMIujQswFBWhJzNPyQAyLeLlaJgxNfhKNUorVPcYcDtIfxwIdrDqWRJDbJRNlzybCZLUZHxQydCMhaniYDRboZBOZiMcDKIZpdgXvBDBg', 'zUabyiiqNeujjvFWszBBFByqOhvQWDeYrlOmSJquCIhlTUSbdVJAzhwBiehjLkXHhzjlCBGZPJcffKEHbkIDSFlbdVdkPKLaHvZPYVqnybdqOohDqXQFCXNxyPMxGNjcCuVdXhnEETjUqpyASpOFwoIIaRGSzLPMJROFEwGjJJBwxNwktXUILSNJNaMSWjwYYqqWtwzcTPLqKuazmkWNMNVlusfHHxTPiPtHPXyLOlXMHpoVDpFETdcDSPRjHAy', 'bNhhpVvcVMIbQVFWURfGvUOvwlNrGrapmYfDDZWwUDAEOjSnKALDAwNQJEVkftygcuqPVnjwfrNmGXIIsvlorDYVObnVlgsjwALIRvKvnyRzDCTqhBTjRJarqyXhooPdSqoWAljheuTnOXFjtaMeYcnvtaDrFUQFrsnOVdsHqIxNgrYemMbJofwJKBkYxkFYXUTpFIaYnMhlAeDaDbEcGjqhkcNWUnyrtcWDLznhlJfLYXhAEwFMWZYgmwHeQdw', 'YAqELXKURSUGvfJgqQyOkEoESPIoNeMvwPisLnDBAjOJOsvWSPxWghHWnshldPEEfYhNDCuIjUyHeSUwCNPZIeABVioQKlYCHjOPSJnhfDYfnwUdOqBbnpKRihZbkdGsYqoWMnXWVApgKPdbvUCxJvOWWBjbPaelPeRiTOrKRhltWjudHJhKAaeesTtXQrgsXLYgXxbKzIuQKQtBVCYWrGBwERqXROJUyPaxCjNnswzWTnFCIHTWAejiCQiDFNA', 'WZeFLmZWyxCBbyVLntixjWkTZAVYBqwNknmaqXpwUyrDsjMXxm', 'axwOjycTPacGHiU', 'WvbKjFoHHFEPdGwDOohI', 'mOHGMBqIOdyrjxSKScdX', 'nTmXYdQKTDHfmerVXOVA', 'yrsToODLJrENJAkSgdVZ', 'FHuTINJlPtPNKshzLVIWyjjDm', 'vfxiSxhRTwMwhNwzmKhUmTDjQ', 1977919842, 'ohGlcHIFSSeWogKnJPXVNQrIlrObCaqtNwgwnmBbfqqNkGvsXd', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'branch'
+--
+
+DROP TABLE IF EXISTS branch;
+CREATE TABLE IF NOT EXISTS branch (
+  BRANCH_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  MANAGER_ID bigint(20) NOT NULL,
+  RESTURANT_ID bigint(20) NOT NULL,
+  ADDRESS_ID bigint(20) NOT NULL,
+  IS_ACTIVE int(1) DEFAULT NULL,
+  BRANCH_CODE varchar(50) DEFAULT NULL,
+  `NAME` varchar(45) DEFAULT NULL,
+  DATE_CREATED datetime NOT NULL,
+  CREATED_BY bigint(20) NOT NULL,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  LAST_UPDATED datetime DEFAULT NULL,
+  PRIMARY KEY (BRANCH_ID),
+  KEY FK_BR_REST (RESTURANT_ID),
+  KEY FK_BR_ADD (ADDRESS_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table 'branch'
+--
+
+INSERT INTO branch (BRANCH_ID, MANAGER_ID, RESTURANT_ID, ADDRESS_ID, IS_ACTIVE, BRANCH_CODE, NAME, DATE_CREATED, CREATED_BY, UPDATED_BY, LAST_UPDATED) VALUES
+(1, 1717440605, 1, 1, 1, NULL, NULL, '0000-00-00 00:00:00', 0, NULL, NULL),
+(2, 235109636, 1, 1, 1, NULL, NULL, '0000-00-00 00:00:00', 0, NULL, NULL),
+(3, 177248646, 1, 1, 1, NULL, NULL, '0000-00-00 00:00:00', 0, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'configurations'
+--
+
+DROP TABLE IF EXISTS configurations;
+CREATE TABLE IF NOT EXISTS configurations (
+  configuration_id mediumint(9) NOT NULL AUTO_INCREMENT,
+  `status` enum('public','private') NOT NULL,
+  date_created datetime NOT NULL,
+  last_updated datetime NOT NULL,
+  account_id mediumint(9) NOT NULL,
+  configuration_name varchar(100) NOT NULL,
+  content mediumtext NOT NULL,
+  num_rows_generated mediumint(9) DEFAULT '0',
+  PRIMARY KEY (configuration_id)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table 'configurations'
+--
+
+INSERT INTO configurations (configuration_id, status, date_created, last_updated, account_id, configuration_name, content, num_rows_generated) VALUES
+(1, 'private', '2017-03-16 00:00:00', '2017-03-19 00:00:00', 8294050, 'jVJNmlLqHgvrNYoKzkPscrExvhBqQDOkOfqJuQqkeXmqXXtaJRJfBXLyjtAXlCvTxgRxoTvDMyEVEmQoPEYZzmsOUPchFaCrNjEm', 'zysvAgUSpkXaGvLFMXKBPHpkENRTiRbiJkxEHuZDkmLfrVbDkLEGEbMgHNPQQUJhMBDKByEjotUNQbZuyDwHIXaqRKeEUTSgWTuWGTYoqkMpRLAlDHSIBocqOTBeUKwdkqiFzMJBlRNbmvVSGIgcKBOJFGEiPLEkeoDjvGoOODwQIZpZUCcPNCHJLxWLQOGxtRLMyxsk', 1907071),
+(2, 'private', '2017-03-18 00:00:00', '2017-03-20 00:00:00', 6469952, 'HjHGzlBaDjHdlvVAZqKgXRSxTJgSEwnYKZEUpNDjHEBEuTIrVPxGojWgVLYfCOHdawIlEpwDTmbQXYJtsyguuqrDioFEclbdOAel', 'fJVqCpOhfoeWGgpBQzNrzhdpdsrYIxlYtnwdPdGvSoFWALekKItHtIlWlvLBGxWytmWIXnrxNltqhZMChgpENboWkgaaOsJlgbWDDLsEiqKEdWISDnqNDyUyFaZdzMerXVbSnkhPvrQkjZuLhqXQSYgmJYbMjLBVBNJEnGBbzMoIwGumtxbJQEXIJhCghZyeaWrsqKVG', 4510762);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'cuisine_translation'
+--
+
+DROP TABLE IF EXISTS cuisine_translation;
+CREATE TABLE IF NOT EXISTS cuisine_translation (
+  CUISINE_TRANS_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  TITLE varchar(255) NOT NULL,
+  DESCRIPTION varchar(255) NOT NULL,
+  CUISINE_TYPE_ID bigint(20) NOT NULL,
+  LANGUAGE_ID bigint(20) NOT NULL,
+  SHOW_DESCRIPTION int(1) DEFAULT NULL,
+  PRIMARY KEY (CUISINE_TRANS_ID),
+  UNIQUE KEY UNQ_CUSTRA (CUISINE_TYPE_ID,LANGUAGE_ID),
+  KEY FK_CUSTRA_LNG (LANGUAGE_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'cuisine_translation'
+--
+
+INSERT INTO cuisine_translation (CUISINE_TRANS_ID, TITLE, DESCRIPTION, CUISINE_TYPE_ID, LANGUAGE_ID, SHOW_DESCRIPTION) VALUES
+(1, 'ENG Title', 'ENG Description', 1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'cuisine_type'
+--
+
+DROP TABLE IF EXISTS cuisine_type;
+CREATE TABLE IF NOT EXISTS cuisine_type (
+  CUISINE_TYPE_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  RESTURANT_ID bigint(20) NOT NULL,
+  IMAGE_URL varchar(255) NOT NULL,
+  IS_ACTIVE int(1) DEFAULT '1',
+  DATE_CREATED datetime NOT NULL,
+  CREATED_BY bigint(20) NOT NULL,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  LAST_UPDATED datetime DEFAULT NULL,
+  PRIMARY KEY (CUISINE_TYPE_ID),
+  KEY FK_CT_REST (RESTURANT_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table 'cuisine_type'
+--
+
+INSERT INTO cuisine_type (CUISINE_TYPE_ID, RESTURANT_ID, IMAGE_URL, IS_ACTIVE, DATE_CREATED, CREATED_BY, UPDATED_BY, LAST_UPDATED) VALUES
+(1, 1, 'Image URL', 1, '0000-00-00 00:00:00', 0, NULL, NULL),
+(2, 1, 'Image URL', 1, '0000-00-00 00:00:00', 0, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'customer'
+--
+
+DROP TABLE IF EXISTS customer;
+CREATE TABLE IF NOT EXISTS customer (
+  CUSTOMER_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  `CODE` varchar(10) NOT NULL,
+  FIRST_NAME varchar(255) NOT NULL,
+  LAST_NAME varchar(255) DEFAULT NULL,
+  MOBILE varchar(15) DEFAULT NULL,
+  ADDRESS_ID bigint(20) DEFAULT NULL,
+  SUBSCRIBE_NEWS_LETTER int(1) DEFAULT '0',
+  RESTURANT_ID bigint(20) NOT NULL,
+  IS_ACTIVE int(1) DEFAULT '1',
+  LAST_UPDATED datetime NOT NULL,
+  CREATED_BY bigint(20) NOT NULL,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  PRIMARY KEY (CUSTOMER_ID),
+  UNIQUE KEY `CODE` (`CODE`),
+  KEY FK_CUST_REST (RESTURANT_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'customer'
+--
+
+INSERT INTO customer (CUSTOMER_ID, CODE, FIRST_NAME, LAST_NAME, MOBILE, ADDRESS_ID, SUBSCRIBE_NEWS_LETTER, RESTURANT_ID, IS_ACTIVE, LAST_UPDATED, CREATED_BY, UPDATED_BY) VALUES
+(1, 'DVFpTBpgIj', 'JIdDQxhtxFKczgRSoAIDjgmYNIkVnThNnPysTjsPfhTpynmgbIxGGQgcMRNZWSredsVXZWZPgbGnxOFzyYvqEIIZUEokBcHpJrQMvLHSxWEgxvwqkWtpNkgKLbKJVFtZBxjNKbVPPYmykClOPYhIsDtHUmyvTsjZUlzPEBdwYsVyvSVlPDRISWAoHSbptjFDuUdjrJYtbdNTzxPrYYlgVmoPHhILCbndjRyzsoIWzbfLQaCfuiDvltalEWVOGNe', 'kitvOJKTymJvdPPhrmrUlbUbjqmHXghQxKYoAEbZyyEDCRpfPqeeDauYsmXZgydVBMdYokClIjagDjwfEutcDDpsPhhmYfCyAeZhgBBFynWJQbvrDHyJeRFFWIChRntEVTzMfEXTnDSWSkiDwIHneOEmEDDgomDxikAcOqoAAqyzPSjESOAAQNVDWAtTavRkgMbDOvHNHHutEWwEVFFUdjJEgNnqfJgwIalWrTvuplWgJrMbuKbwjfQnIgDRiJP', 'ZjOghVaPuqKnnxs', 1528938913, 1640644326, 1, 1, '0000-00-00 00:00:00', 0, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'feedback_config'
+--
+
+DROP TABLE IF EXISTS feedback_config;
+CREATE TABLE IF NOT EXISTS feedback_config (
+  FEEDBACK_CONFIG_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  `NAME` varchar(100) NOT NULL,
+  IS_ACTIVE int(1) DEFAULT NULL,
+  RESTAURANT_ID bigint(20) NOT NULL,
+  FEEDBACK_TYPE_ID bigint(20) NOT NULL,
+  IS_REQUIRED int(1) DEFAULT '0',
+  DESCRIPTION varchar(255) DEFAULT NULL,
+  DATE_CREATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CREATED_BY bigint(20) NOT NULL,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  LAST_UPDATED datetime DEFAULT NULL,
+  PRIMARY KEY (FEEDBACK_CONFIG_ID),
+  KEY FK_FEEDBKCONF_REST (RESTAURANT_ID),
+  KEY FK_FEEDBKCONF_FDBKTYPE (FEEDBACK_TYPE_ID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'feedback_config_translation'
+--
+
+DROP TABLE IF EXISTS feedback_config_translation;
+CREATE TABLE IF NOT EXISTS feedback_config_translation (
+  FEEDBACK_CONFIG_TRANSLATION_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  FEEDBACK_CONFIG_ID bigint(20) NOT NULL,
+  TITLE varchar(255) NOT NULL,
+  DESCRIPTION varchar(255) NOT NULL,
+  LANGUAGE_ID bigint(20) NOT NULL,
+  SHOW_DESCRIPTION int(1) DEFAULT '0',
+  PRIMARY KEY (FEEDBACK_CONFIG_TRANSLATION_ID),
+  UNIQUE KEY UK_FEEDBKCONF_TR (FEEDBACK_CONFIG_ID,LANGUAGE_ID),
+  KEY FK_FEEDBKCONF_LANG (LANGUAGE_ID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'feedback_customer'
+--
+
+DROP TABLE IF EXISTS feedback_customer;
+CREATE TABLE IF NOT EXISTS feedback_customer (
+  FEEDBACK_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  CUSTOMER_ID bigint(20) DEFAULT NULL,
+  CUSTOMER_CONTACT varchar(255) DEFAULT NULL,
+  FEEDBACK_CONFIG_ID bigint(20) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  FEEDBACK_CONTEXT varchar(20) DEFAULT NULL,
+  REFERENCE_ID bigint(20) DEFAULT NULL,
+  DATE_CREATED datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (FEEDBACK_ID),
+  KEY FK_FEEDBK_CUSTID (CUSTOMER_ID),
+  KEY FK_FEEDBK_FEEDBK_CONF (FEEDBACK_CONFIG_ID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'feedback_type'
+--
+
+DROP TABLE IF EXISTS feedback_type;
+CREATE TABLE IF NOT EXISTS feedback_type (
+  FEEDBACK_TYPE_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  IS_ACTIVE int(1) DEFAULT NULL,
+  `NAME` varchar(100) NOT NULL,
+  DESCRIPTION varchar(255) DEFAULT NULL,
+  DATE_CREATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CREATED_BY bigint(20) NOT NULL,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  LAST_UPDATED datetime DEFAULT NULL,
+  PRIMARY KEY (FEEDBACK_TYPE_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'feedback_type'
+--
+
+INSERT INTO feedback_type (FEEDBACK_TYPE_ID, IS_ACTIVE, NAME, DESCRIPTION, DATE_CREATED, CREATED_BY, UPDATED_BY, LAST_UPDATED) VALUES
+(1, 705382351, '1329648048', NULL, '2017-12-24 15:45:46', 0, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'ingredient'
+--
+
+DROP TABLE IF EXISTS ingredient;
+CREATE TABLE IF NOT EXISTS ingredient (
+  INGREDIENT_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  IMAGE_URL varchar(255) NOT NULL,
+  IS_ACTIVE int(1) DEFAULT NULL,
+  RESTURANT_ID bigint(20) NOT NULL,
+  LAST_UPDATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CREATED_BY bigint(20) NOT NULL,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  DATE_CREATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (INGREDIENT_ID),
+  KEY FK_ING_REST (RESTURANT_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'ingredient'
+--
+
+INSERT INTO ingredient (INGREDIENT_ID, IMAGE_URL, IS_ACTIVE, RESTURANT_ID, LAST_UPDATED, CREATED_BY, UPDATED_BY, DATE_CREATED) VALUES
+(1, 'Image URL', 1, 1, '2017-12-24 16:38:02', 0, NULL, '2017-12-24 16:38:02');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'ingredient_translation'
+--
+
+DROP TABLE IF EXISTS ingredient_translation;
+CREATE TABLE IF NOT EXISTS ingredient_translation (
+  INGREDIENT_TRANSLATION_ID bigint(20) NOT NULL,
+  INGREDIENT_ID bigint(20) NOT NULL,
+  DESCRIPTION varchar(255) DEFAULT NULL,
+  LANGUAGE_ID bigint(20) NOT NULL,
+  TITLE varchar(255) NOT NULL,
+  SHOW_DESCRIPTION int(11) DEFAULT '0',
+  PRIMARY KEY (INGREDIENT_TRANSLATION_ID),
+  UNIQUE KEY UNQ_INGTRAN (INGREDIENT_ID,LANGUAGE_ID),
+  KEY FK_INGTRA_LNG (LANGUAGE_ID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table 'ingredient_translation'
+--
+
+INSERT INTO ingredient_translation (INGREDIENT_TRANSLATION_ID, INGREDIENT_ID, DESCRIPTION, LANGUAGE_ID, TITLE, SHOW_DESCRIPTION) VALUES
+(1, 1, 'Eng Description', 1, 'Eng Title', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'item'
+--
+
+DROP TABLE IF EXISTS item;
+CREATE TABLE IF NOT EXISTS item (
+  ITEM_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  CATEGORY_ID bigint(20) NOT NULL,
+  CUISINE_TYPE_ID bigint(20) NOT NULL,
+  SPICE_TYPE_ID bigint(20) NOT NULL,
+  TAGS varchar(500) DEFAULT NULL,
+  RESTAURANT_ID bigint(20) NOT NULL,
+  IS_ACTIVE int(1) NOT NULL DEFAULT '1',
+  IS_DELETED int(1) DEFAULT '0',
+  DATE_CREATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CREATED_BY bigint(20) NOT NULL,
+  LAST_UPDATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  ACTION_TYPE varchar(50) DEFAULT NULL,
+  PRIMARY KEY (ITEM_ID),
+  KEY FK_ITEM_CT (CUISINE_TYPE_ID),
+  KEY FK_ITEM_SPICE (SPICE_TYPE_ID),
+  KEY FK_ITEM_CAT (CATEGORY_ID,CUISINE_TYPE_ID,SPICE_TYPE_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table 'item'
+--
+
+INSERT INTO item (ITEM_ID, CATEGORY_ID, CUISINE_TYPE_ID, SPICE_TYPE_ID, TAGS, RESTAURANT_ID, IS_ACTIVE, IS_DELETED, DATE_CREATED, CREATED_BY, LAST_UPDATED, UPDATED_BY, ACTION_TYPE) VALUES
+(1, 1, 1, 1, 'Item Tags', 1, 1, 0, '2017-12-24 17:23:21', 0, '2017-12-24 17:23:21', NULL, NULL),
+(2, 1, 1, 1, NULL, 1, 1, 0, '2017-12-24 17:23:21', 0, '2017-12-24 17:23:21', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'item_addon'
+--
+
+DROP TABLE IF EXISTS item_addon;
+CREATE TABLE IF NOT EXISTS item_addon (
+  ITEM_ADDON_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  ADDON_ID bigint(20) NOT NULL,
+  PRICE decimal(5,3) NOT NULL,
+  IS_ACTIVE int(1) DEFAULT NULL,
+  ITEM_ID bigint(20) NOT NULL,
+  PRIMARY KEY (ITEM_ADDON_ID),
+  UNIQUE KEY UNQ_ITMAO (ITEM_ID,ADDON_ID),
+  KEY FK_ITEMADDON_ADDON (ADDON_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'item_addon'
+--
+
+INSERT INTO item_addon (ITEM_ADDON_ID, ADDON_ID, PRICE, IS_ACTIVE, ITEM_ID) VALUES
+(1, 1, '1.200', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'item_category'
+--
+
+DROP TABLE IF EXISTS item_category;
+CREATE TABLE IF NOT EXISTS item_category (
+  ITEM_CATEGORY_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  IMAGE_URL varchar(255) NOT NULL,
+  SMALL_ICON_URL varchar(255) NOT NULL,
+  LARGE_ICON_URL varchar(255) NOT NULL,
+  PARENT_CATEGORY bigint(20) DEFAULT NULL,
+  TAGS varchar(500) DEFAULT NULL,
+  MENU_ID bigint(20) NOT NULL,
+  AVAILABLE_DURATION_START datetime DEFAULT NULL,
+  AVAILABLE_DURATION_END datetime DEFAULT NULL,
+  RESTURANT_ID bigint(20) NOT NULL,
+  IS_ACTIVE int(1) DEFAULT NULL,
+  DISPLAY_ORDER int(4) NOT NULL,
+  DATE_CREATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CREATED_BY bigint(20) NOT NULL,
+  LAST_UPDATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  ACTION_TYPE varchar(50) DEFAULT NULL,
+  PRIMARY KEY (ITEM_CATEGORY_ID),
+  UNIQUE KEY UNQ_ITECAT (RESTURANT_ID,MENU_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'item_category'
+--
+
+INSERT INTO item_category (ITEM_CATEGORY_ID, IMAGE_URL, SMALL_ICON_URL, LARGE_ICON_URL, PARENT_CATEGORY, TAGS, MENU_ID, AVAILABLE_DURATION_START, AVAILABLE_DURATION_END, RESTURANT_ID, IS_ACTIVE, DISPLAY_ORDER, DATE_CREATED, CREATED_BY, LAST_UPDATED, UPDATED_BY, ACTION_TYPE) VALUES
+(1, 'Image URL', 'SMALL ICON URL', 'Large ICON URL', 1576528172, '12345', 1, '2017-12-24 19:56:47', '2017-12-24 19:52:02', 1, 400854744, 1, '2017-12-24 17:32:16', 0, '2017-12-24 17:32:16', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'item_category_translation'
+--
+
+DROP TABLE IF EXISTS item_category_translation;
+CREATE TABLE IF NOT EXISTS item_category_translation (
+  ITEM_CATEGORY_TRANS_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  TITLE varchar(255) DEFAULT NULL,
+  DESCRIPTION varchar(255) DEFAULT NULL,
+  LANGUAGE_ID bigint(20) NOT NULL,
+  ITEM_CATEGORY_ID bigint(20) NOT NULL,
+  SHOW_DESCRIPTION int(1) DEFAULT NULL,
+  PRIMARY KEY (ITEM_CATEGORY_TRANS_ID),
+  UNIQUE KEY UNQ_ICT (LANGUAGE_ID,ITEM_CATEGORY_ID),
+  KEY FK_ITEM_CAT_TR (ITEM_CATEGORY_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'item_category_translation'
+--
+
+INSERT INTO item_category_translation (ITEM_CATEGORY_TRANS_ID, TITLE, DESCRIPTION, LANGUAGE_ID, ITEM_CATEGORY_ID, SHOW_DESCRIPTION) VALUES
+(1, 'Cate_ENG', 'English translation for category 1', 1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'item_discount'
+--
+
+DROP TABLE IF EXISTS item_discount;
+CREATE TABLE IF NOT EXISTS item_discount (
+  ITEM_DISCOUNT_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  DISCOUNT_PRICE decimal(5,3) NOT NULL,
+  START_DATE date NOT NULL,
+  END_DATE date NOT NULL,
+  ITEM_VARIANT_ID bigint(20) DEFAULT NULL,
+  IS_ACTIVE int(1) DEFAULT NULL,
+  DATE_CREATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CREATED_BY bigint(20) NOT NULL,
+  LAST_UPDATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  PRIMARY KEY (ITEM_DISCOUNT_ID),
+  KEY FK_ITDIS_VAR (ITEM_VARIANT_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'item_discount'
+--
+
+INSERT INTO item_discount (ITEM_DISCOUNT_ID, DISCOUNT_PRICE, START_DATE, END_DATE, ITEM_VARIANT_ID, IS_ACTIVE, DATE_CREATED, CREATED_BY, LAST_UPDATED, UPDATED_BY) VALUES
+(1, '2.200', '2017-03-21', '2017-03-19', 1, 1, '2017-12-24 17:42:35', 0, '2017-12-24 17:42:35', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'item_ingredient'
+--
+
+DROP TABLE IF EXISTS item_ingredient;
+CREATE TABLE IF NOT EXISTS item_ingredient (
+  ITEM_INGREDIENT_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  INGREDIENT_ID bigint(20) NOT NULL,
+  ITEM_ID bigint(20) NOT NULL,
+  PRIMARY KEY (ITEM_INGREDIENT_ID),
+  KEY FK_II_ITEM (ITEM_ID),
+  KEY FK_II_ING (INGREDIENT_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'item_ingredient'
+--
+
+INSERT INTO item_ingredient (ITEM_INGREDIENT_ID, INGREDIENT_ID, ITEM_ID) VALUES
+(1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'item_media_content'
+--
+
+DROP TABLE IF EXISTS item_media_content;
+CREATE TABLE IF NOT EXISTS item_media_content (
+  ITEM_MEDIA_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  ITEM_ID bigint(20) NOT NULL,
+  IMAGE_URL varchar(255) NOT NULL,
+  VIDEO_URL varchar(255) DEFAULT NULL,
+  VIDEO_SOURCE_ID bigint(2) DEFAULT NULL,
+  DISPLAY_ORDER int(4) NOT NULL,
+  IS_ACTIVE int(1) DEFAULT NULL,
+  DATE_CREATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CREATED_BY bigint(20) NOT NULL,
+  LAST_UPDATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  PRIMARY KEY (ITEM_MEDIA_ID),
+  KEY FK_IMC_IT (ITEM_ID),
+  KEY FK_IMC_VS (VIDEO_SOURCE_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'item_media_content'
+--
+
+INSERT INTO item_media_content (ITEM_MEDIA_ID, ITEM_ID, IMAGE_URL, VIDEO_URL, VIDEO_SOURCE_ID, DISPLAY_ORDER, IS_ACTIVE, DATE_CREATED, CREATED_BY, LAST_UPDATED, UPDATED_BY) VALUES
+(1, 1, 'Image URL', 'Vedio URL', 1, 1, 1, '2017-12-24 17:43:33', 0, '2017-12-24 17:43:33', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'item_translation'
+--
+
+DROP TABLE IF EXISTS item_translation;
+CREATE TABLE IF NOT EXISTS item_translation (
+  ITEM_TRANSLATION_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  TITLE varchar(255) NOT NULL,
+  DESCRIPTION varchar(255) NOT NULL,
+  ITEM_ID bigint(20) NOT NULL,
+  LANGUAGE_ID bigint(20) NOT NULL,
+  DIETARY_INFORMATION varchar(1000) DEFAULT NULL,
+  SHOW_DESCRIPTION int(1) DEFAULT '0',
+  PRIMARY KEY (ITEM_TRANSLATION_ID),
+  UNIQUE KEY UNQ_ITTRA (ITEM_ID,LANGUAGE_ID),
+  KEY FK_ITEM_TRANS (LANGUAGE_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'item_translation'
+--
+
+INSERT INTO item_translation (ITEM_TRANSLATION_ID, TITLE, DESCRIPTION, ITEM_ID, LANGUAGE_ID, DIETARY_INFORMATION, SHOW_DESCRIPTION) VALUES
+(1, 'Eng Title', 'Eng Desc', 1, 1, 'Eng Diet Information', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'item_variant'
+--
+
+DROP TABLE IF EXISTS item_variant;
+CREATE TABLE IF NOT EXISTS item_variant (
+  ITEM_VARIANT_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  ITEM_ID bigint(20) NOT NULL,
+  VARIANT_ID bigint(20) NOT NULL,
+  PRICE decimal(5,3) NOT NULL,
+  APPROX_PREPERATION_TIME int(11) NOT NULL,
+  IS_ACTIVE int(1) DEFAULT NULL,
+  IS_PRIMARY int(1) DEFAULT NULL,
+  DATE_CREATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CREATED_BY bigint(20) NOT NULL,
+  LAST_UPDATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  ACTION_TYPE varchar(50) DEFAULT NULL,
+  PRIMARY KEY (ITEM_VARIANT_ID),
+  UNIQUE KEY UNQ_ITMVAR (ITEM_ID,VARIANT_ID),
+  KEY FK_ITEM_VAR_VARID_idx (VARIANT_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'item_variant'
+--
+
+INSERT INTO item_variant (ITEM_VARIANT_ID, ITEM_ID, VARIANT_ID, PRICE, APPROX_PREPERATION_TIME, IS_ACTIVE, IS_PRIMARY, DATE_CREATED, CREATED_BY, LAST_UPDATED, UPDATED_BY, ACTION_TYPE) VALUES
+(1, 1, 1, '3.100', 30, 1, NULL, '2017-12-24 18:42:42', 0, '2017-12-24 18:42:42', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'menu'
+--
+
+DROP TABLE IF EXISTS menu;
+CREATE TABLE IF NOT EXISTS menu (
+  MENU_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  TITLE varchar(255) NOT NULL,
+  RESTURANT_ID bigint(20) NOT NULL,
+  IS_ACTIVE int(1) DEFAULT '1',
+  IS_DELETED int(1) DEFAULT '0',
+  DATE_CREATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CREATED_BY bigint(20) NOT NULL,
+  LAST_UPDATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  ACTION_TYPE varchar(50) DEFAULT NULL,
+  PRIMARY KEY (MENU_ID),
+  KEY FK_MENU_REST (RESTURANT_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'menu'
+--
+
+INSERT INTO menu (MENU_ID, TITLE, RESTURANT_ID, IS_ACTIVE, IS_DELETED, DATE_CREATED, CREATED_BY, LAST_UPDATED, UPDATED_BY, ACTION_TYPE) VALUES
+(1, 'Menu Titile', 1, 1, 0, '2017-12-24 19:14:34', 0, '2017-12-24 19:14:34', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'order'
+--
+
+DROP TABLE IF EXISTS `order`;
+CREATE TABLE IF NOT EXISTS `order` (
+  ORDER_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  REFERENCE_NUM varchar(255) NOT NULL COMMENT 'Generated by application',
+  CUSTOMER_ID bigint(20) NOT NULL,
+  RESTAURANT_ID bigint(20) NOT NULL,
+  BRANCH_ID bigint(20) NOT NULL,
+  ORDER_DATE timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  SPECIAL_REMARKS varchar(500) DEFAULT NULL,
+  SERVING_TABLE_ID bigint(20) NOT NULL,
+  STATUS_TYPE_ID bigint(20) NOT NULL,
+  CANCELLATION_REASON varchar(500) DEFAULT NULL,
+  DISCOUNT_APPLIED_PCT decimal(5,3) DEFAULT NULL,
+  STAFF_ID bigint(20) NOT NULL,
+  PRIMARY KEY (ORDER_ID),
+  KEY FK_ORD_CUST (CUSTOMER_ID),
+  KEY FK_ORD_ST (SERVING_TABLE_ID),
+  KEY FK_ORD_STF (STAFF_ID),
+  KEY FK_ORD_BR (BRANCH_ID),
+  KEY FK_ORD_REST_idx (RESTAURANT_ID),
+  KEY FK_ORD_STATUS (STATUS_TYPE_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+
+--
+-- Dumping data for table 'order'
+--
+
+INSERT INTO order (ORDER_ID, REFERENCE_NUM, CUSTOMER_ID, RESTAURANT_ID, BRANCH_ID, ORDER_DATE, SPECIAL_REMARKS, SERVING_TABLE_ID, STATUS_TYPE_ID, CANCELLATION_REASON, DISCOUNT_APPLIED_PCT, STAFF_ID) VALUES
+(1, 'jSJgddzZkRVZgqKuFAqDPnTlYMTEmUirUPUIjyNoaUikliDkbBkktusNXjkmEibthcYYxdmncyHCyBgVVdubNrslFvUJYzdlTtlPRPluQxMsJWvvcvOibRZfGGIgRVjCCMXewskFakbdJiDJeFoNpTQTkoYXjitfFaMdIciBUUyipbjlgTTzvrHiLZAlpudRunErvxAQTvOKNntozKLKkJIqTIOappEuLdiigajCZtcJARyTzWpnUXRIKSijTjl', 1, 0, 1, '2017-03-16 15:43:27', 'xUhwNrPKcWlOOAKjKgiBvBbbmuNnEGunUBzzsfsQlZAWFfjPOJdYPZYjkXZhtLzEtLzpbIAtEKFjoVoooFFzGXPPkgJFIxIWyctyrhHPwCIqBRQljXjCvhEnAJqywbNDQRufdnoJBWIyVuLwFjgNoAVwdhjMkbWOApMfhoMYgKqwvrQAewXbjRiJxuUBxVBFUNtDZJPRLfHAaLYrgSTntUXqtJIvxrfApExtcWKxatDNvVNnuBjbKqNlEVGpcERzXzBRNeZBQELDJvkNjeSRKEVauSTWSPWyGBwllYAEZpVmVtXkVdHgXaBDdBgOnBimHtcxiLjwMRGDgWyvjZmoAgQFnXTgcoYuQVFDMAWuGlBexovWoJdBxdXrnyRvMAxYnIDbKslYFIFrdjLjAYosfDNgtmQXqJzHccfmVyKAjxchYlPiMDCzppfTQIDeYpSsSfkBYOYlaxxcAGFwwkitvVMEsxYrAhPWsgtETQOLlUzZWwNirIQe', 1, 1230125889, 'hNAKMBpAMzILcqZcCXtUrarweMCdPUTpVWWpBXQNKRPepKNqtGXlDpeYJRYzcufRHmcaFjIlilcvGiASnSfVlwkditZOtyyWNXGyTJNuUxIzziZnCHtcGppvLIWyxUpSIzXCZRkncDFeJJSUkmVYjbcbWsHUsyPSTtzqcgUpPTyLzbzZEeeeAjBqqftzvFbvqkgBCBzFhRQKgLHJQOgywQRaNwmBbXvhbtmCFxCPKRlKduySelsKrROiQOyGOVYNpNoMUrQhYbdUdcbsgZpcBPERvyBaSkrwomJIkTXrbcIERJhmUeCqByHLFYBUDGnWfxqADaTyXowUQleyiZEBWyTmxDxonmgpvWysIkrvsFFMpLKLjBzTidkxxJeJDsYGoPCHBTGQtEcnTDVgsCnDndNmkWwDxCcogBEHevaQfAmEKwpycuuvWkeWcGLJGVCFtUQDFkIrpTfmQjNXCIkwThbXoBiHDdvrAtrMfblzvJHKclUPEpxN', '0.000', 1),
+(4, '1437482674676', 1, 0, 1, '2017-07-21 12:44:35', NULL, 1, 0, '', '0.000', 1),
+(5, '1', 1, 0, 1, '2017-07-21 13:38:32', NULL, 1, 0, '', '0.000', 1),
+(6, '2', 1, 0, 1, '2017-07-21 13:38:47', NULL, 1, 0, '', '0.000', 1),
+(7, '11562-3', 1, 0, 1, '2017-07-21 13:43:56', NULL, 1, 0, '', '0.000', 1),
+(8, '20170721-4', 1, 0, 1, '2017-07-21 13:48:16', NULL, 1, 0, '', '0.000', 1),
+(9, '20170726-5', 1, 0, 1, '2017-07-26 12:15:36', NULL, 1, 0, '', '0.000', 1),
+(10, '20170726-6', 1, 0, 1, '2017-07-26 12:17:59', NULL, 1, 0, '', '0.000', 1),
+(11, '20170726-7', 1, 0, 1, '2017-07-26 14:03:53', NULL, 1, 0, '', '0.000', 1),
+(12, '20170727-8', 1, 0, 1, '2017-07-27 11:45:03', NULL, 1, 0, '', '0.000', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'order_items'
+--
+
+DROP TABLE IF EXISTS order_items;
+CREATE TABLE IF NOT EXISTS order_items (
+  ORDER_ITEM bigint(20) NOT NULL AUTO_INCREMENT,
+  ORDER_ID bigint(20) NOT NULL,
+  ITEM_ID bigint(20) NOT NULL,
+  ITEM_VARIANT_ID bigint(20) NOT NULL,
+  QUANTITY bigint(20) NOT NULL,
+  SPECIAL_REMARKS varchar(500) DEFAULT NULL,
+  ORDER_PRICE decimal(5,3) NOT NULL,
+  PRIMARY KEY (ORDER_ITEM),
+  KEY FK_OI_IV (ITEM_VARIANT_ID),
+  KEY FK_OI_ORD (ORDER_ID),
+  KEY FK_ORDER_ITEM_idx (ITEM_ID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'order_item_addon'
+--
+
+DROP TABLE IF EXISTS order_item_addon;
+CREATE TABLE IF NOT EXISTS order_item_addon (
+  ORDER_ITEM_ADDON_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  ORDER_ID bigint(20) NOT NULL,
+  PRICE decimal(5,3) NOT NULL,
+  SPECIAL_REMARKS varchar(500) DEFAULT NULL,
+  QUANTITY int(10) NOT NULL DEFAULT '1',
+  ITEM_ADDON_ID bigint(20) NOT NULL,
+  PRIMARY KEY (ORDER_ITEM_ADDON_ID),
+  KEY FK_OIA_IAD (ITEM_ADDON_ID),
+  KEY FK_OIA_ORD (ORDER_ID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'order_special_deal_item'
+--
+
+DROP TABLE IF EXISTS order_special_deal_item;
+CREATE TABLE IF NOT EXISTS order_special_deal_item (
+  ORDER_SPECIAL_DEAL_ITEM_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  ORDER_ID bigint(20) NOT NULL,
+  QUANTITY int(11) NOT NULL,
+  SPECIAL_REMARKS varchar(255) DEFAULT NULL,
+  ORDER_PRICE decimal(5,3) NOT NULL,
+  SPECIAL_DEAL_ITEM_ID bigint(20) NOT NULL,
+  PRIMARY KEY (ORDER_SPECIAL_DEAL_ITEM_ID),
+  KEY FK_OSDI_ORD (ORDER_ID),
+  KEY FK_OSDI_MDI (SPECIAL_DEAL_ITEM_ID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'ref_language'
+--
+
+DROP TABLE IF EXISTS ref_language;
+CREATE TABLE IF NOT EXISTS ref_language (
+  LANGUAGE_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  `NAME` varchar(25) NOT NULL,
+  `CODE` varchar(4) NOT NULL,
+  IS_ACTIVE int(1) DEFAULT NULL,
+  PRIMARY KEY (LANGUAGE_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table 'ref_language'
+--
+
+INSERT INTO ref_language (LANGUAGE_ID, NAME, CODE, IS_ACTIVE) VALUES
+(1, 'OGwjuVaDKOPfJKBAYGcqvKxdc', 'EN', 1),
+(2, 'RvmmTjTOiTeuPHwMjMSTdBeku', 'AR', 1),
+(3, 'JGvPHkblDtNtrMycQUhMteSgh', 'UR', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'restaurant'
+--
+
+DROP TABLE IF EXISTS restaurant;
+CREATE TABLE IF NOT EXISTS restaurant (
+  RESTAURANT_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  `NAME` varchar(255) NOT NULL,
+  RESTAURANT_CODE varchar(50) NOT NULL,
+  LOGO_SMALL varchar(255) NOT NULL,
+  LOGO_LARGE varchar(255) NOT NULL,
+  THEME varchar(5) DEFAULT NULL,
+  ACCOUNT_TYPE_ID bigint(20) NOT NULL,
+  BACKGROUND_IMAGE varchar(255) DEFAULT NULL,
+  ACTIVATION_KEY varchar(25) NOT NULL,
+  ACTIVATION_DATE datetime DEFAULT NULL,
+  BILLING_PERIOD int(1) DEFAULT NULL,
+  ACCOUNT_BLOCKED int(1) DEFAULT '0',
+  ACCOUNT_CANCELLED int(1) DEFAULT '0',
+  ACCOUNT_DELETED int(1) DEFAULT '0',
+  DATE_CREATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CREATED_BY bigint(20) NOT NULL,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  LAST_UPDATED datetime DEFAULT NULL,
+  ACTION_TYPE varchar(50) DEFAULT NULL,
+  PRIMARY KEY (RESTAURANT_ID),
+  UNIQUE KEY ACTIVATION_KEY (ACTIVATION_KEY),
+  KEY FK_REST_ACCT (ACCOUNT_TYPE_ID),
+  KEY FK_REST_CREATED_BY_idx (CREATED_BY),
+  KEY FK_REST_DEL_BY_idx (UPDATED_BY)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table 'restaurant'
+--
+
+INSERT INTO restaurant (RESTAURANT_ID, NAME, RESTAURANT_CODE, LOGO_SMALL, LOGO_LARGE, THEME, ACCOUNT_TYPE_ID, BACKGROUND_IMAGE, ACTIVATION_KEY, ACTIVATION_DATE, BILLING_PERIOD, ACCOUNT_BLOCKED, ACCOUNT_CANCELLED, ACCOUNT_DELETED, DATE_CREATED, CREATED_BY, UPDATED_BY, LAST_UPDATED, ACTION_TYPE) VALUES
+(1, '', '', 'GOOGLE.COM', 'GOOGLE.COM', 'BL', 1, 'Google.com', '123213123121ad', NULL, NULL, 0, 0, 0, '0000-00-00 00:00:00', 0, NULL, NULL, NULL),
+(2, '', '', 'hnHrttpJVYMWzNtXyODXapsKgtSLyjXYCvzVfRqEuDvmGBhOCuSOcHwFSaGLWrzqBJXEBxtiDeXSDIekMTAwYsFYRpYTeirOBGRBMxnBQJznsEjodooiyTjkHDvDzNKCQSzTKtKjOVloGpVNIUoybbbyXDbJXDpNpFDzOpCAdVASsczXxvRZzgLeYvBZeINeRYJVkwAVaxBGeoCnAqTutSOAGSigvjRdkVZSblBDezzTxksoUNvLBKVncumBsLb', 'PVDuSSFKowhUkxFONkvouepXQDKMbTnnTmTbKfDOLdnAieJyHTnRAosDZWgHAxOVpKLpZCVCdYvwPFZxENjcbanLZgUBSZWHEjWYnsfFwradnnhFxKYJprxJvOVrQoAApFUwDIJJAFdLVVaDatFdbASCZsjMdCaYrCzVhXoqgJpScnOGdLMTJpYzrZdRwQFArhcsXBSHGVKIixhzWdlynRkWUZBxzYPpDMFXPuOGoqAfIEmMHmCxRFeLyQlihnK', 'qPyqP', 1, 'YHebJsrsWQXjAzHnQRKhSSWABUhrxoPkICycjhfXLIbPgrkIOkYpTrfiCEUaGrdtbWcpiUkCcGBwgrhLDrLAEdAwPUpHiUOPERvwzeSCubHVDxEOjTYPznEUiDtZtEKoMZxZHFORfEZWFYmnlCkJlESEcchQGRMlJvlRroxYgzHnrySljXadJjULIKwAesGhhJOPBXYRNvZqOkWHXLJgsQFmEjDeyYVZFVQfzaqIDwRYGVXfmzmYTDhaYdfVLIM', 'RmJgPxRzSccdbOzisZaUCGLin', NULL, NULL, 0, 0, 0, '0000-00-00 00:00:00', 0, NULL, NULL, NULL),
+(3, '', '', 'RxfnhFETXfQrLMJMMAsDfKCOFggVSkFuqUtaZZUdBninpyrYFkURORLmEvHEMGUjBxWvcJShddHzYayeGqGDKWZJuRbOAfLsDWzStblTKGvkwcaCxQwYYOtcsHvKaeeWUnQnCexWnlZHbSPvCeSnKGgFJAXwAcMsQKrIYZRMWVdYorBFxidUawojXXmrRgqLuEgTvTzIsQZNqBQCiBwCryYihLZxbdzPoVxwGjOfIprWfGPYqvWCkmKFJPCwkiM', 'GDNvsdKwwGBdllyawmUxjefmnMPsGwjqnSQRxKcQjWqvPLfisoMBDoWWXAUdIruDKuSCgAmgiSEmzSbgdFYiUgRYdWhnMaNaDJZfpxiSjJwydhIDInGKPlxISuolLXgvWebxvgUpbtInTOVbOvudaxRUIIFyzJHZOqjzfAYQFxcQYXgREbdMYivhpCWTXdmlyIOoIxamzvMoIefeytohwWvqvVOpfBkTaHIfTiNYLefeGtPIRwLxsmQkFRbuMdI', 'xhQRu', 1, 'yOhjppmzYeZOjCfxFAuddJGjUAncegFhaFhOZdBzKpEIFinvTyMrRLtPDGMtArfSOjWHShatjgcvutyrQtpNcyqgJNecKGPAiyelXTiTaTNQErPGjJveOCdYsOoqixBTHtjvXGDWKrXgCmDEcwSCvKBCzTxIuTdRYqMLHAyMVpynUPLZEFyqOeflchynzcSnfyzcCjePqrKMrRgNtNpobWOxHnFlYvlrjFhoEDgPaMYdnvjpRXLaceslFouRPat', 'QhicgBKxSapylGaAobocmgaAJ', NULL, NULL, 0, 0, 0, '0000-00-00 00:00:00', 0, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'restaurant_device'
+--
+
+DROP TABLE IF EXISTS restaurant_device;
+CREATE TABLE IF NOT EXISTS restaurant_device (
+  RESTAURANT_DEVICE_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  DEVICE_ID varchar(255) NOT NULL,
+  DEVICE_MANUFECTURER varchar(255) NOT NULL,
+  REGISTRATION_CODE varchar(45) NOT NULL,
+  RESTURANT_ID bigint(20) NOT NULL,
+  LAST_LOGIN_TIME datetime DEFAULT NULL,
+  IS_ACTIVE int(1) DEFAULT '1',
+  IS_BLOCKED int(1) DEFAULT NULL,
+  ACTIVATED_ON datetime DEFAULT NULL,
+  LAST_UPDATED datetime DEFAULT NULL,
+  BLOCKED_BY varchar(255) DEFAULT NULL,
+  CREATED_BY bigint(20) NOT NULL,
+  DATE_CREATED datetime NOT NULL,
+  APPLICATION_MODE int(1) DEFAULT '1' COMMENT 'Application mode can be 1=ROAMING, 2=FIXED, 3=KIOSK',
+  TABLE_REFERENCE varchar(4) DEFAULT NULL COMMENT 'This field will be populated only if the application_mode is 2 or 3',
+  IS_CUST_CONTACT_MANDATORY int(1) DEFAULT '0',
+  PRIMARY KEY (RESTAURANT_DEVICE_ID),
+  KEY FK_RESTD_REST (RESTURANT_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'restaurant_device'
+--
+
+INSERT INTO restaurant_device (RESTAURANT_DEVICE_ID, DEVICE_ID, DEVICE_MANUFECTURER, REGISTRATION_CODE, RESTURANT_ID, LAST_LOGIN_TIME, IS_ACTIVE, IS_BLOCKED, ACTIVATED_ON, LAST_UPDATED, BLOCKED_BY, CREATED_BY, DATE_CREATED, APPLICATION_MODE, TABLE_REFERENCE, IS_CUST_CONTACT_MANDATORY) VALUES
+(1, '1', 'HTC', '12345656343434', 1, '2017-03-16 00:00:00', 1, 0, '2017-03-19 00:00:00', '2017-03-20 00:00:00', '', 0, '0000-00-00 00:00:00', 1, NULL, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'restaurant_language'
+--
+
+DROP TABLE IF EXISTS restaurant_language;
+CREATE TABLE IF NOT EXISTS restaurant_language (
+  RESTURANT_LANGUAGE_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  RESTURANT_ID bigint(20) NOT NULL,
+  LANGUAGE_ID bigint(20) NOT NULL,
+  IS_ACTIVE int(11) DEFAULT '1',
+  DATE_CREATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CREATED_BY bigint(20) NOT NULL,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  LAST_UPDATED datetime DEFAULT NULL,
+  PRIMARY KEY (RESTURANT_LANGUAGE_ID),
+  UNIQUE KEY UNQ_RESTLANG (RESTURANT_ID,LANGUAGE_ID),
+  KEY FK_RST_LNG (LANGUAGE_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'restaurant_language'
+--
+
+INSERT INTO restaurant_language (RESTURANT_LANGUAGE_ID, RESTURANT_ID, LANGUAGE_ID, IS_ACTIVE, DATE_CREATED, CREATED_BY, UPDATED_BY, LAST_UPDATED) VALUES
+(1, 1, 1, 176678519, '2017-12-24 15:23:49', 0, NULL, '2017-12-24 15:23:49');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'restaurant_translation'
+--
+
+DROP TABLE IF EXISTS restaurant_translation;
+CREATE TABLE IF NOT EXISTS restaurant_translation (
+  RESTURANT_TRANS_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  TITLE varchar(255) NOT NULL,
+  DESCRIPTION varchar(255) NOT NULL,
+  RESTURANT_ID bigint(20) NOT NULL,
+  LANGUAGE_ID bigint(20) NOT NULL,
+  SHOW_DESCRIPTION int(1) DEFAULT NULL,
+  PRIMARY KEY (RESTURANT_TRANS_ID),
+  UNIQUE KEY UNQ_RESTTRA (RESTURANT_ID,LANGUAGE_ID),
+  KEY FK_RESTTR_LNG (LANGUAGE_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'restaurant_translation'
+--
+
+INSERT INTO restaurant_translation (RESTURANT_TRANS_ID, TITLE, DESCRIPTION, RESTURANT_ID, LANGUAGE_ID, SHOW_DESCRIPTION) VALUES
+(1, 'xugQWAlXzCSZmDnRkhcIZtsGzYDZpwsUtlcTIeflPALMRczcKZGFiXIQtKQFthCvJUHlEfQcRdpohkhuQSduHmYoHJncOTkdVHcmUnugwRAHKcBgjTTFkLAWYFxaHmevfEzOhCXgIWdExBLamvyDKySbJZmStGNmfGzsUxtZMLJpwdpCDtVXfhWVpeVHaHVfdPnyzLknYXmxpszxmWkweLBquQIHesUxBykaymJtcXEhxApvWKqoNKBZZlYscos', 'zaHnndSIEKsQssjcoTgPfdLqYwSFmHhCmnZWIQDiKwtApGwqKjbeCMUmpeXLpdQTaHLoBQFOdTaebwqZxGBCDKXSGXCbDkjcOBYvnnblisFxDhjgdwrMuvrlrVaUaJbxmZFHmPXGgTYYVeoJMrjSyrLDLqUsNWGjNXRPtSEMzVZfSwWDdnnvFaFgDpFWYBjRyLeIsoRyVmvvyRsrAFQkyTemzGbqFNrzpIDsvGwlUaztONpKRgtBwaPlbddTmpn', 1, 1, 1951030447);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'role'
+--
+
+DROP TABLE IF EXISTS role;
+CREATE TABLE IF NOT EXISTS role (
+  ROLE_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  ROLE_NAME varchar(255) NOT NULL,
+  DESCRIPTION varchar(255) NOT NULL,
+  RESTURANT_ID bigint(20) NOT NULL,
+  IS_ACTIVE int(1) DEFAULT NULL,
+  PRIMARY KEY (ROLE_ID),
+  KEY FK_ROLE_REST (RESTURANT_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'role'
+--
+
+INSERT INTO role (ROLE_ID, ROLE_NAME, DESCRIPTION, RESTURANT_ID, IS_ACTIVE) VALUES
+(1, 'htJxLOZhhJtvNjpjjIHUufLZXBctvvbZRLRYTAeKjuvJTlOCpUerXJqelQKseHILuQxmtLVvInDjnCmdSBNCyRsTIJaCBNAcJWxmXUosArQGiBtWAVQUXKALhrOvBOMTIzAHoKwMZyCdIhGQhcGjIqNEQAkRzPLtZBtJgvefYNHmMHjCgUFtQcHXUZecxkPiaMiZFKjvSAzFCgolMbfRYdqVoHFHtcvSXQPnPWhiWiWhrTzQOtuQSbOnVDuULjM', 'ojQCSTlJATHGZHtFndVEZRcUcpHMGYawbQlOQdiPQGxUCzTwPMPKuhkpWooAFiuKCVQbsZCruMYaOAGEOjVFGbKFdjpSufSoOuiAmGMdtEXxkliEVUwWyWjwxVxWqUCOaWCQKkmdTFqPFmHxgavFKDJneAICcFpMFZEHWKokvcTZOgaXDXeIEsIbnHzJOddRtamMVlKbGnjotFNDVvyrfykUOEeMLrwvIDueeAkTVlCtVsidsiZKYNUyHodnTry', 1, 940500771);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'role_service'
+--
+
+DROP TABLE IF EXISTS role_service;
+CREATE TABLE IF NOT EXISTS role_service (
+  ROLE_SERVICE_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  ROLE_ID bigint(20) NOT NULL,
+  SERVICE_ID bigint(20) NOT NULL,
+  IS_ACTIVE int(1) DEFAULT NULL,
+  PRIMARY KEY (ROLE_SERVICE_ID),
+  UNIQUE KEY UNQ_RLSER (ROLE_ID,SERVICE_ID),
+  KEY FK_RS_SERV (SERVICE_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'role_service'
+--
+
+INSERT INTO role_service (ROLE_SERVICE_ID, ROLE_ID, SERVICE_ID, IS_ACTIVE) VALUES
+(1, 1, 1, 881228617);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'sequence_holder'
+--
+
+DROP TABLE IF EXISTS sequence_holder;
+CREATE TABLE IF NOT EXISTS sequence_holder (
+  ID int(11) NOT NULL AUTO_INCREMENT,
+  ENTITY_TYPE int(11) NOT NULL,
+  SEQ_NAME varchar(45) NOT NULL,
+  NEXT_VAL bigint(20) NOT NULL,
+  PRIMARY KEY (ID),
+  UNIQUE KEY ID_UNIQUE (ID),
+  UNIQUE KEY ENTITY_TYPE_UNIQUE (ENTITY_TYPE)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'sequence_holder'
+--
+
+INSERT INTO sequence_holder (ID, ENTITY_TYPE, SEQ_NAME, NEXT_VAL) VALUES
+(1, 1, 'ORDER_REFERENCE', 9);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'service'
+--
+
+DROP TABLE IF EXISTS service;
+CREATE TABLE IF NOT EXISTS service (
+  SERVICE_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  DESCRIPTION varchar(50) NOT NULL,
+  `NAME` varchar(50) NOT NULL,
+  URL varchar(255) DEFAULT NULL,
+  IS_ACTIVE int(1) DEFAULT NULL,
+  RESTURANT_ID bigint(20) NOT NULL,
+  PRIMARY KEY (SERVICE_ID),
+  KEY FK_SER_REST (RESTURANT_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'service'
+--
+
+INSERT INTO service (SERVICE_ID, DESCRIPTION, NAME, URL, IS_ACTIVE, RESTURANT_ID) VALUES
+(1, 'jPWBteYnQUUbHFyYcJUKYvDNHAjclzZhyKQXAklEIhgWflmbdF', 'iSdUJUWnLwsWarwtAOfoNuHtIZXZKFcokROulNjHOoauHfBpus', 'PZVvYeVBeiZnlPpczvgpjVhRkkOsDotshxzQwrdmbnKYnTrjKgseakIWiHEyADKFqBFKQNHyZKGkdTemwaxvuEeCVBlqQMUHEJwpUcmnPMSMaEGnuTyEEwFAklNNvsOjjFBiMCyZStSsvHkZezNiRspAslYnbzzdknBnlIxHgghndwmuSnZOivYMteNwyvwcHaVESSolBcmqoVeaGrfMMgQDKqkwaUVWVNvmlpVusiEYidVXrpvRbZCqNuATOQX', 2128773228, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'serving_table'
+--
+
+DROP TABLE IF EXISTS serving_table;
+CREATE TABLE IF NOT EXISTS serving_table (
+  SERVING_TABLE_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  DESCRIPTION varchar(255) DEFAULT NULL,
+  TABLE_REF_NUMBER varchar(10) NOT NULL,
+  RESTAURANT_ID bigint(20) NOT NULL,
+  BRANCH_ID bigint(20) NOT NULL,
+  IS_ACTIVE int(1) DEFAULT '1',
+  PRIMARY KEY (SERVING_TABLE_ID),
+  KEY FK_ST_BR (BRANCH_ID),
+  KEY FK_SERV_TBL_REST_idx (RESTAURANT_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'serving_table'
+--
+
+INSERT INTO serving_table (SERVING_TABLE_ID, DESCRIPTION, TABLE_REF_NUMBER, RESTAURANT_ID, BRANCH_ID, IS_ACTIVE) VALUES
+(1, 'aWXuhsYsDaNOPFhnaMINkQEYUuRdsbKxhevmLzZvzriGtWxrMuKHtGUsVARXEMIuyLSJKpwDMbkzJovfPTTqNSqajRUNwIozlcZPDQdEgplCFysZHITUdMcGysrEcoPFHilCBaqcLlnZXMtRomypuSjuWthLvigryLnnOfeCETMKEEZbTFWGCgcufWmzOfkogityCLnEKJaKFJEBvHrzNqtcBlBCBKaFYNNmzkklhVjIhxwXnJMGytRKHcHplXv', 'rTXHDIjNOS', 0, 1, 656570293);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'special_deal'
+--
+
+DROP TABLE IF EXISTS special_deal;
+CREATE TABLE IF NOT EXISTS special_deal (
+  SPECIAL_DEAL_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  START_DATE date NOT NULL,
+  END_DATE date NOT NULL,
+  PRICE decimal(5,3) NOT NULL,
+  IMAGE_URL varchar(255) DEFAULT NULL,
+  RESTURANT_ID bigint(20) NOT NULL,
+  IS_ACTIVE int(1) DEFAULT NULL,
+  PRIMARY KEY (SPECIAL_DEAL_ID),
+  KEY FK_SD_REST (RESTURANT_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'special_deal'
+--
+
+INSERT INTO special_deal (SPECIAL_DEAL_ID, START_DATE, END_DATE, PRICE, IMAGE_URL, RESTURANT_ID, IS_ACTIVE) VALUES
+(1, '2017-03-19', '2017-03-18', '3.100', 'Image URL', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'special_deal_item'
+--
+
+DROP TABLE IF EXISTS special_deal_item;
+CREATE TABLE IF NOT EXISTS special_deal_item (
+  MEAL_DEAL_ITEM_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  SPECIAL_DEAL_ID bigint(20) NOT NULL,
+  ITEM_ID bigint(20) NOT NULL,
+  QUANTITY int(11) NOT NULL,
+  PRIMARY KEY (MEAL_DEAL_ITEM_ID),
+  KEY FK_SDI_SD (SPECIAL_DEAL_ID),
+  KEY FK_SDI_ITM (ITEM_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'special_deal_item'
+--
+
+INSERT INTO special_deal_item (MEAL_DEAL_ITEM_ID, SPECIAL_DEAL_ID, ITEM_ID, QUANTITY) VALUES
+(1, 1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'special_deal_translation'
+--
+
+DROP TABLE IF EXISTS special_deal_translation;
+CREATE TABLE IF NOT EXISTS special_deal_translation (
+  SPECIAL_DEAL_TRANSLATION_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  TITLE varchar(255) NOT NULL,
+  DESCRIPTION varchar(255) NOT NULL,
+  LANGUAGE_ID bigint(20) NOT NULL,
+  SPECIAL_DEAL_ID bigint(20) NOT NULL,
+  SHOW_DESCRIPTION int(1) DEFAULT NULL,
+  OTHER_REMARKS varchar(255) DEFAULT NULL,
+  PRIMARY KEY (SPECIAL_DEAL_TRANSLATION_ID),
+  UNIQUE KEY UNQ_SDT (SPECIAL_DEAL_ID,LANGUAGE_ID),
+  KEY FK_SMT_LNG (LANGUAGE_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'special_deal_translation'
+--
+
+INSERT INTO special_deal_translation (SPECIAL_DEAL_TRANSLATION_ID, TITLE, DESCRIPTION, LANGUAGE_ID, SPECIAL_DEAL_ID, SHOW_DESCRIPTION, OTHER_REMARKS) VALUES
+(1, 'Eng Title', 'Eng Desc', 1, 1, 1, 'Remarks');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'spice_type'
+--
+
+DROP TABLE IF EXISTS spice_type;
+CREATE TABLE IF NOT EXISTS spice_type (
+  SPICE_TYPE_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  IMAGE_URL varchar(255) DEFAULT NULL,
+  IS_ACTIVE int(11) DEFAULT NULL,
+  RESTURANT_ID bigint(20) NOT NULL,
+  PRIMARY KEY (SPICE_TYPE_ID),
+  KEY FK_SPT_RST (RESTURANT_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'spice_type'
+--
+
+INSERT INTO spice_type (SPICE_TYPE_ID, IMAGE_URL, IS_ACTIVE, RESTURANT_ID) VALUES
+(1, 'spice type image', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'spice_type_translation'
+--
+
+DROP TABLE IF EXISTS spice_type_translation;
+CREATE TABLE IF NOT EXISTS spice_type_translation (
+  SPICE_TYPE_TRANS_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  SPICE_TYPE_ID bigint(20) NOT NULL,
+  LANGUAGE_ID bigint(20) NOT NULL,
+  DESCRIPTION varchar(255) DEFAULT NULL,
+  TITLE varchar(255) NOT NULL,
+  SHOW_DESCRIPTION int(11) DEFAULT NULL,
+  PRIMARY KEY (SPICE_TYPE_TRANS_ID),
+  UNIQUE KEY UNQ_STT (LANGUAGE_ID,SPICE_TYPE_ID),
+  KEY FK_SPT_SPI (SPICE_TYPE_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'spice_type_translation'
+--
+
+INSERT INTO spice_type_translation (SPICE_TYPE_TRANS_ID, SPICE_TYPE_ID, LANGUAGE_ID, DESCRIPTION, TITLE, SHOW_DESCRIPTION) VALUES
+(1, 1, 1, 'Eng Desc', 'Eng Title', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'staff'
+--
+
+DROP TABLE IF EXISTS staff;
+CREATE TABLE IF NOT EXISTS staff (
+  STAFF_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  USER_ID bigint(20) NOT NULL,
+  STAFF_CODE varchar(10) NOT NULL,
+  FIRST_NAME varchar(255) NOT NULL,
+  MIDDLE_NAME varchar(255) DEFAULT NULL,
+  LAST_NAME varchar(255) NOT NULL,
+  ADDRESS_ID bigint(20) NOT NULL,
+  MOBILE_ID bigint(20) DEFAULT NULL,
+  BRANCH_ID bigint(20) NOT NULL,
+  IS_ACTIVE int(1) DEFAULT NULL,
+  DESIGNATION varchar(255) DEFAULT NULL,
+  RESTAURANT_ID bigint(20) NOT NULL,
+  PRIMARY KEY (STAFF_ID),
+  UNIQUE KEY USER_ID (USER_ID),
+  UNIQUE KEY STAFF_CODE (STAFF_CODE),
+  KEY FK_STAFF_ADD (ADDRESS_ID),
+  KEY FK_STAFF_BRN (BRANCH_ID),
+  KEY FK_STAFF_REST_idx (RESTAURANT_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'staff'
+--
+
+INSERT INTO staff (STAFF_ID, USER_ID, STAFF_CODE, FIRST_NAME, MIDDLE_NAME, LAST_NAME, ADDRESS_ID, MOBILE_ID, BRANCH_ID, IS_ACTIVE, DESIGNATION, RESTAURANT_ID) VALUES
+(1, 1, 'vEBYAgJJTI', 'rjcEoxQjqEhBNPcaVeZljzbUQMXhLtngKmLLcpoPQTgvvrgQlUgmkAqKWDwoQEvkCrJXtyYihAWmlKreRVOdzevXxjwPQyNDUDfDGQxzeIAAEKyXUkcXcxBzunjIdvpIGqIhRZlsYQBNYukDnddlzZgrxbiwbScLVAACqWrvORttMcfeBoOdqAbYJRculKbsWgDOSNbbqtHRhIzIsAfHWKUKhsWZMxMwEacYoCqivzToSbhjJKuMihUeaJgpQAD', 'YxtuVstSOWMJbIaqBeMSyFGhBhgWOUVjpZPLjKAQmPqMRoVrJxclgajsgjtecqQeagOjkYpzpVQZVOKSEBfbcZAPlfbmEgbrRWoYWJJpwefiZKHtEkEsDptYjaBFWDwPeAQyGhXyYBQunwsLyoVesHotgEslwTvDNOwBGEBsvbjFPlvJklbEmYAYcdwxHXHlUkUMASdPIurwWnTomeGzWMDNJYeIcOOVHblOWsHzHOPtZFyWTSQSqUquYZvSCAT', 'KpePPlIJKbnCswrdqvyCwWHUfUNOBtKaYzBrWlNHioXAZYfltYctuLcEUPmKusIbEOWndqkoqYIaeJlFyVridREgITrSVjwEfGQBmEgFCkImYitbhSTRAmFQyGXSHGsRdPyxsbYuKFXjtKrtvKWFKOkLxEhAPQUnPGzKpapYejyaEoLkFqpAmLelngdOWYZCtJyksMjdCreOJTmmukGwxFkfbDbQxVuYgMYivNQsfRUGQVwjdqNjvcvxNqhKVik', 1, 2081522486, 1, 1813216229, NULL, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'status_type'
+--
+
+DROP TABLE IF EXISTS status_type;
+CREATE TABLE IF NOT EXISTS status_type (
+  STATUS_TYPE_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  `NAME` varchar(100) DEFAULT NULL,
+  IS_ACTIVE int(1) DEFAULT NULL,
+  DESCRIPTION varchar(255) DEFAULT NULL,
+  PRIMARY KEY (STATUS_TYPE_ID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'user'
+--
+
+DROP TABLE IF EXISTS user;
+CREATE TABLE IF NOT EXISTS `user` (
+  USER_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  USERNAME varchar(255) NOT NULL,
+  `PASSWORD` varchar(255) NOT NULL,
+  IS_LOCKED int(1) DEFAULT '0',
+  IS_ACTIVE int(1) DEFAULT NULL,
+  RESTURANT_ID bigint(20) NOT NULL,
+  PASSWORD_RECOVERY_QST varchar(100) DEFAULT NULL,
+  PASSWORD_RECOVERY_ANS varchar(100) DEFAULT NULL,
+  LAST_LOGGED_IN datetime DEFAULT NULL,
+  EXPIRES_ON datetime DEFAULT NULL,
+  DATE_CREATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  CREATED_BY bigint(20) NOT NULL,
+  LAST_UPDATED datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UPDATED_BY bigint(20) DEFAULT NULL,
+  ACTION_TYPE varchar(50) DEFAULT NULL,
+  PRIMARY KEY (USER_ID),
+  UNIQUE KEY USERNAME (USERNAME),
+  KEY FK_USR_REST (RESTURANT_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'user'
+--
+
+INSERT INTO user (USER_ID, USERNAME, PASSWORD, IS_LOCKED, IS_ACTIVE, RESTURANT_ID, PASSWORD_RECOVERY_QST, PASSWORD_RECOVERY_ANS, LAST_LOGGED_IN, EXPIRES_ON, DATE_CREATED, CREATED_BY, LAST_UPDATED, UPDATED_BY, ACTION_TYPE) VALUES
+(1, 'SUypHeeBpOlupBIiiGxlNHtbzkmqrmCvPnhfHfcJCWPAReSbNxdNuwGiXmRHauDKeaGXPMuvoNqADducBMhkVJWVdzsuOKHLyzGvoEQflryBqXFZOgvJdVluazbCucncGEuVdKvyERnboswBGgOPDdSCEPMCWBcSRvlavYhQpfGDEQUqQbcuHPfbNtCZGcktriHYPMncLURcKhHhPqawuhkTDoJENCTsKTdLfqkjHrLjOJpCXaPtlqvtjPhonmF', 'csLXFOcQQtMrskdGzZjCmUCLKZIIZDCKbwhASQOMXtvZtcYDEwfKxPHBoNSUQTwgnjrmscKYvvCAjHEVlDonPZCqxWnklmulmwXZHLNYfbbkBApgHoOYeOBOpJQKywvZMkYBYNCszRaPcwaEOHSFrAqEpWfUYVsznXuhXGqMYlWfvhzdDbRSGWBBdOWjwxQXZIbVXHqoMvlwtRUnUKBWvvqEWBhHMJSoafIOoYIwUmenmoVXGQngTVoDmWxWOrp', 416166842, 371163310, 1, NULL, NULL, NULL, NULL, '2017-12-24 20:36:28', 0, '2017-12-24 20:36:28', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'user_role'
+--
+
+DROP TABLE IF EXISTS user_role;
+CREATE TABLE IF NOT EXISTS user_role (
+  USER_ROLE_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  USER_ID bigint(20) NOT NULL,
+  ROLE_ID bigint(20) NOT NULL,
+  IS_ACTIVE int(1) DEFAULT NULL,
+  PRIMARY KEY (USER_ROLE_ID),
+  UNIQUE KEY UNQ_USRROLE (USER_ID,ROLE_ID),
+  KEY FK_USR_USER (ROLE_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'user_role'
+--
+
+INSERT INTO user_role (USER_ROLE_ID, USER_ID, ROLE_ID, IS_ACTIVE) VALUES
+(1, 1, 1, 1254168987);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'variant'
+--
+
+DROP TABLE IF EXISTS variant;
+CREATE TABLE IF NOT EXISTS variant (
+  VARIANT_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  IMAGE_URL varchar(255) NOT NULL,
+  RESTURANT_ID bigint(20) NOT NULL,
+  IS_ACTIVE int(1) DEFAULT NULL,
+  PRIMARY KEY (VARIANT_ID),
+  KEY FK_VAR_REST (RESTURANT_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'variant'
+--
+
+INSERT INTO variant (VARIANT_ID, IMAGE_URL, RESTURANT_ID, IS_ACTIVE) VALUES
+(1, 'Image URL', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'variant_translation'
+--
+
+DROP TABLE IF EXISTS variant_translation;
+CREATE TABLE IF NOT EXISTS variant_translation (
+  VARIANT_TRANS_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  LANGUAGE_ID bigint(20) NOT NULL,
+  VARIANT_ID bigint(20) NOT NULL,
+  TITLE varchar(255) NOT NULL,
+  DESCRIPTION varchar(255) NOT NULL,
+  SHOW_DESCRIPTION int(1) DEFAULT NULL,
+  PRIMARY KEY (VARIANT_TRANS_ID),
+  UNIQUE KEY UNQ_VARTRA (VARIANT_ID,LANGUAGE_ID),
+  KEY FK_VARTRA_LNG (LANGUAGE_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'variant_translation'
+--
+
+INSERT INTO variant_translation (VARIANT_TRANS_ID, LANGUAGE_ID, VARIANT_ID, TITLE, DESCRIPTION, SHOW_DESCRIPTION) VALUES
+(1, 1, 1, 'Eng Title', 'Eng Description', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'video_source_type'
+--
+
+DROP TABLE IF EXISTS video_source_type;
+CREATE TABLE IF NOT EXISTS video_source_type (
+  VIDEO_SOURCE_TYPE_ID bigint(20) NOT NULL AUTO_INCREMENT,
+  `NAME` varchar(255) NOT NULL,
+  DESCRIPTION varchar(255) NOT NULL,
+  IS_ACTIVE int(1) DEFAULT NULL,
+  PRIMARY KEY (VIDEO_SOURCE_TYPE_ID)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table 'video_source_type'
+--
+
+INSERT INTO video_source_type (VIDEO_SOURCE_TYPE_ID, NAME, DESCRIPTION, IS_ACTIVE) VALUES
+(1, 'GytwNGHbjGWStaRKTgugaSwMHFmasMokldzWgxoxLktzTVANrsaAoOBHPRymtZOROtSkYlqBssjOxCesVqmZVqEKoeJDCtFphIcJXIhPtAoltmxULorOpYsgVutDdlQjDkNBLkEmxGJCxhEXwigNkvFTIIlJwZAfvDhgKzOgjNIQLhDwhQHgtjgsbAibmJohfhoWSKnDwEMqmchGmxYHqRUbwBslwoeVJKlrSnmVbGWWsxBxHlBNFbjVELfzwSA', 'CVTlQnytGMKyjyKwTdeylHBoApoGvHFqQLCnDncmsKdkxNjJkgwZmiGBlhoHKFWsIwOyEQMjSDXYqlMWsaHrREpTsMrRygpMtzUuGjCnJjRrzwdrVExOusfWZCMdZTaHzpzAyTbNRSMMGwJmgFzevhDiYWRmULPXuUZPpQxhYHqhOdYVrXszuhEVdAidchUpkTmzXcLOQQDVTlWeiKuiTMepuvsnXMucYrNTKLRhXZHUOCZvIUVKkaIURTqNHGW', 250149906);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table addon
+--
+ALTER TABLE addon
+  ADD CONSTRAINT FK_ADDON_REST FOREIGN KEY (RESTURANT_ID) REFERENCES restaurant (RESTAURANT_ID);
+
+--
+-- Constraints for table addon_translation
+--
+ALTER TABLE addon_translation
+  ADD CONSTRAINT FK_ADDONTRA_LAN FOREIGN KEY (LANGUAGE_ID) REFERENCES ref_language (LANGUAGE_ID);
+
+--
+-- Constraints for table branch
+--
+ALTER TABLE branch
+  ADD CONSTRAINT FK_BR_ADD FOREIGN KEY (ADDRESS_ID) REFERENCES address (ADDRESS_ID),
+  ADD CONSTRAINT FK_BR_REST FOREIGN KEY (RESTURANT_ID) REFERENCES restaurant (RESTAURANT_ID);
+
+--
+-- Constraints for table cuisine_translation
+--
+ALTER TABLE cuisine_translation
+  ADD CONSTRAINT FK_CUSTRA_CUS FOREIGN KEY (CUISINE_TYPE_ID) REFERENCES cuisine_type (CUISINE_TYPE_ID),
+  ADD CONSTRAINT FK_CUSTRA_LNG FOREIGN KEY (LANGUAGE_ID) REFERENCES ref_language (LANGUAGE_ID);
+
+--
+-- Constraints for table cuisine_type
+--
+ALTER TABLE cuisine_type
+  ADD CONSTRAINT FK_CT_REST FOREIGN KEY (RESTURANT_ID) REFERENCES restaurant (RESTAURANT_ID);
+
+--
+-- Constraints for table customer
+--
+ALTER TABLE customer
+  ADD CONSTRAINT FK_CUST_REST FOREIGN KEY (RESTURANT_ID) REFERENCES restaurant (RESTAURANT_ID);
+
+--
+-- Constraints for table feedback_config
+--
+ALTER TABLE feedback_config
+  ADD CONSTRAINT FK_FEEDBKCONF_REST FOREIGN KEY (RESTAURANT_ID) REFERENCES restaurant (RESTAURANT_ID),
+  ADD CONSTRAINT FK_FEEDBKCONF_FDBKTYPE FOREIGN KEY (FEEDBACK_TYPE_ID) REFERENCES feedback_type (FEEDBACK_TYPE_ID);
+
+--
+-- Constraints for table feedback_config_translation
+--
+ALTER TABLE feedback_config_translation
+  ADD CONSTRAINT FK_FEEDBKCONF_TR FOREIGN KEY (FEEDBACK_CONFIG_ID) REFERENCES feedback_config (FEEDBACK_CONFIG_ID),
+  ADD CONSTRAINT FK_FEEDBKCONF_LANG FOREIGN KEY (LANGUAGE_ID) REFERENCES ref_language (LANGUAGE_ID);
+
+--
+-- Constraints for table feedback_customer
+--
+ALTER TABLE feedback_customer
+  ADD CONSTRAINT FK_FEEDBK_CUSTID FOREIGN KEY (CUSTOMER_ID) REFERENCES customer (CUSTOMER_ID),
+  ADD CONSTRAINT FK_FEEDBK_FEEDBK_CONF FOREIGN KEY (FEEDBACK_CONFIG_ID) REFERENCES feedback_config (FEEDBACK_CONFIG_ID);
+
+--
+-- Constraints for table ingredient
+--
+ALTER TABLE ingredient
+  ADD CONSTRAINT FK_ING_REST FOREIGN KEY (RESTURANT_ID) REFERENCES restaurant (RESTAURANT_ID);
+
+--
+-- Constraints for table ingredient_translation
+--
+ALTER TABLE ingredient_translation
+  ADD CONSTRAINT FK_INGTRA_ING FOREIGN KEY (INGREDIENT_ID) REFERENCES ingredient (INGREDIENT_ID),
+  ADD CONSTRAINT FK_INGTRA_LNG FOREIGN KEY (LANGUAGE_ID) REFERENCES ref_language (LANGUAGE_ID);
+
+--
+-- Constraints for table item
+--
+ALTER TABLE item
+  ADD CONSTRAINT FK_ITEM_CAT FOREIGN KEY (CATEGORY_ID) REFERENCES item_category (ITEM_CATEGORY_ID),
+  ADD CONSTRAINT FK_ITEM_CT FOREIGN KEY (CUISINE_TYPE_ID) REFERENCES cuisine_type (CUISINE_TYPE_ID),
+  ADD CONSTRAINT FK_ITEM_SPICE FOREIGN KEY (SPICE_TYPE_ID) REFERENCES spice_type (SPICE_TYPE_ID);
+
+--
+-- Constraints for table item_addon
+--
+ALTER TABLE item_addon
+  ADD CONSTRAINT FK_ITEMADDON_ADDON FOREIGN KEY (ADDON_ID) REFERENCES addon (ADDON_ID),
+  ADD CONSTRAINT FK_ITEMADDON_ITEM FOREIGN KEY (ITEM_ID) REFERENCES item (ITEM_ID);
+
+--
+-- Constraints for table item_category_translation
+--
+ALTER TABLE item_category_translation
+  ADD CONSTRAINT FK_ITEM_CAT_LANG FOREIGN KEY (LANGUAGE_ID) REFERENCES ref_language (LANGUAGE_ID),
+  ADD CONSTRAINT FK_ITEM_CAT_TR FOREIGN KEY (ITEM_CATEGORY_ID) REFERENCES item_category (ITEM_CATEGORY_ID);
+
+--
+-- Constraints for table item_discount
+--
+ALTER TABLE item_discount
+  ADD CONSTRAINT FK_ITDIS_VAR FOREIGN KEY (ITEM_VARIANT_ID) REFERENCES item_variant (ITEM_VARIANT_ID);
+
+--
+-- Constraints for table item_ingredient
+--
+ALTER TABLE item_ingredient
+  ADD CONSTRAINT FK_II_ING FOREIGN KEY (INGREDIENT_ID) REFERENCES ingredient (INGREDIENT_ID),
+  ADD CONSTRAINT FK_II_ITEM FOREIGN KEY (ITEM_ID) REFERENCES item (ITEM_ID);
+
+--
+-- Constraints for table item_media_content
+--
+ALTER TABLE item_media_content
+  ADD CONSTRAINT FK_IMC_VS FOREIGN KEY (VIDEO_SOURCE_ID) REFERENCES video_source_type (VIDEO_SOURCE_TYPE_ID),
+  ADD CONSTRAINT FK_IMC_IT FOREIGN KEY (ITEM_ID) REFERENCES item (ITEM_ID);
+
+--
+-- Constraints for table item_translation
+--
+ALTER TABLE item_translation
+  ADD CONSTRAINT FK_ITEM_TRANS FOREIGN KEY (ITEM_ID) REFERENCES item (ITEM_ID),
+  ADD CONSTRAINT FK_ITEM_LANG FOREIGN KEY (LANGUAGE_ID) REFERENCES ref_language (LANGUAGE_ID);
+
+--
+-- Constraints for table item_variant
+--
+ALTER TABLE item_variant
+  ADD CONSTRAINT FK_ITEM_VAR_ITEM FOREIGN KEY (ITEM_ID) REFERENCES item (ITEM_ID) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT FK_ITEM_VAR_VARID FOREIGN KEY (VARIANT_ID) REFERENCES variant (VARIANT_ID) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table menu
+--
+ALTER TABLE menu
+  ADD CONSTRAINT FK_MENU_REST FOREIGN KEY (RESTURANT_ID) REFERENCES restaurant (RESTAURANT_ID);
+
+--
+-- Constraints for table order
+--
+ALTER TABLE order
+  ADD CONSTRAINT FK_ORD_BR FOREIGN KEY (BRANCH_ID) REFERENCES branch (BRANCH_ID),
+  ADD CONSTRAINT FK_ORD_CUST FOREIGN KEY (CUSTOMER_ID) REFERENCES customer (CUSTOMER_ID),
+  ADD CONSTRAINT FK_ORD_ST FOREIGN KEY (SERVING_TABLE_ID) REFERENCES serving_table (SERVING_TABLE_ID),
+  ADD CONSTRAINT FK_ORD_STF FOREIGN KEY (STAFF_ID) REFERENCES staff (STAFF_ID),
+  ADD CONSTRAINT FK_ORD_STATUS FOREIGN KEY (STATUS_TYPE_ID) REFERENCES status_type (STATUS_TYPE_ID) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT FK_ORD_REST FOREIGN KEY (RESTAURANT_ID) REFERENCES restaurant (RESTAURANT_ID) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table order_items
+--
+ALTER TABLE order_items
+  ADD CONSTRAINT FK_ORDER_ITEM FOREIGN KEY (ITEM_ID) REFERENCES item (ITEM_ID) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT FK_OI_IV FOREIGN KEY (ITEM_VARIANT_ID) REFERENCES item_variant (ITEM_VARIANT_ID),
+  ADD CONSTRAINT FK_OI_ORD FOREIGN KEY (ORDER_ID) REFERENCES order (ORDER_ID);
+
+--
+-- Constraints for table order_item_addon
+--
+ALTER TABLE order_item_addon
+  ADD CONSTRAINT FK_OIA_IAD FOREIGN KEY (ITEM_ADDON_ID) REFERENCES item_addon (ITEM_ID),
+  ADD CONSTRAINT FK_OIA_ORD FOREIGN KEY (ORDER_ID) REFERENCES order (ORDER_ID);
+
+--
+-- Constraints for table order_special_deal_item
+--
+ALTER TABLE order_special_deal_item
+  ADD CONSTRAINT FK_OSDI_MDI FOREIGN KEY (SPECIAL_DEAL_ITEM_ID) REFERENCES special_deal_item (MEAL_DEAL_ITEM_ID),
+  ADD CONSTRAINT FK_OSDI_ORD FOREIGN KEY (ORDER_ID) REFERENCES order (ORDER_ID);
+
+--
+-- Constraints for table restaurant
+--
+ALTER TABLE restaurant
+  ADD CONSTRAINT FK_REST_ACCT FOREIGN KEY (ACCOUNT_TYPE_ID) REFERENCES account_type (ACCOUNT_TYPE_ID),
+  ADD CONSTRAINT FK_REST_UPDATED_BY FOREIGN KEY (UPDATED_BY) REFERENCES `user` (USER_ID) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table restaurant_device
+--
+ALTER TABLE restaurant_device
+  ADD CONSTRAINT FK_RESTD_REST FOREIGN KEY (RESTURANT_ID) REFERENCES restaurant (RESTAURANT_ID);
+
+--
+-- Constraints for table restaurant_language
+--
+ALTER TABLE restaurant_language
+  ADD CONSTRAINT FK_RSTLNG_REST FOREIGN KEY (RESTURANT_ID) REFERENCES restaurant (RESTAURANT_ID),
+  ADD CONSTRAINT FK_RST_LNG FOREIGN KEY (LANGUAGE_ID) REFERENCES ref_language (LANGUAGE_ID);
+
+--
+-- Constraints for table restaurant_translation
+--
+ALTER TABLE restaurant_translation
+  ADD CONSTRAINT FK_RESTTR_LNG FOREIGN KEY (LANGUAGE_ID) REFERENCES ref_language (LANGUAGE_ID),
+  ADD CONSTRAINT FK_RESTTR_REST FOREIGN KEY (RESTURANT_ID) REFERENCES restaurant (RESTAURANT_ID);
+
+--
+-- Constraints for table role
+--
+ALTER TABLE role
+  ADD CONSTRAINT FK_ROLE_REST FOREIGN KEY (RESTURANT_ID) REFERENCES restaurant (RESTAURANT_ID);
+
+--
+-- Constraints for table role_service
+--
+ALTER TABLE role_service
+  ADD CONSTRAINT FK_RS_ROLE FOREIGN KEY (ROLE_ID) REFERENCES role (ROLE_ID),
+  ADD CONSTRAINT FK_RS_SERV FOREIGN KEY (SERVICE_ID) REFERENCES service (SERVICE_ID);
+
+--
+-- Constraints for table service
+--
+ALTER TABLE service
+  ADD CONSTRAINT FK_SER_REST FOREIGN KEY (RESTURANT_ID) REFERENCES restaurant (RESTAURANT_ID);
+
+--
+-- Constraints for table serving_table
+--
+ALTER TABLE serving_table
+  ADD CONSTRAINT FK_SERV_TBL_REST FOREIGN KEY (RESTAURANT_ID) REFERENCES restaurant (RESTAURANT_ID) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT FK_ST_BR FOREIGN KEY (BRANCH_ID) REFERENCES branch (BRANCH_ID);
+
+--
+-- Constraints for table special_deal
+--
+ALTER TABLE special_deal
+  ADD CONSTRAINT FK_SD_REST FOREIGN KEY (RESTURANT_ID) REFERENCES restaurant (RESTAURANT_ID);
+
+--
+-- Constraints for table special_deal_item
+--
+ALTER TABLE special_deal_item
+  ADD CONSTRAINT FK_SDI_ITM FOREIGN KEY (ITEM_ID) REFERENCES item (ITEM_ID),
+  ADD CONSTRAINT FK_SDI_SD FOREIGN KEY (SPECIAL_DEAL_ID) REFERENCES special_deal (SPECIAL_DEAL_ID);
+
+--
+-- Constraints for table special_deal_translation
+--
+ALTER TABLE special_deal_translation
+  ADD CONSTRAINT FK_SMT_LNG FOREIGN KEY (LANGUAGE_ID) REFERENCES ref_language (LANGUAGE_ID),
+  ADD CONSTRAINT FK_SMT_SPD FOREIGN KEY (SPECIAL_DEAL_ID) REFERENCES special_deal (SPECIAL_DEAL_ID);
+
+--
+-- Constraints for table spice_type
+--
+ALTER TABLE spice_type
+  ADD CONSTRAINT FK_SPT_RST FOREIGN KEY (RESTURANT_ID) REFERENCES restaurant (RESTAURANT_ID);
+
+--
+-- Constraints for table spice_type_translation
+--
+ALTER TABLE spice_type_translation
+  ADD CONSTRAINT FK_SPT_LNG FOREIGN KEY (LANGUAGE_ID) REFERENCES ref_language (LANGUAGE_ID),
+  ADD CONSTRAINT FK_SPT_SPI FOREIGN KEY (SPICE_TYPE_ID) REFERENCES spice_type (SPICE_TYPE_ID);
+
+--
+-- Constraints for table staff
+--
+ALTER TABLE staff
+  ADD CONSTRAINT FK_STAFF_ADD FOREIGN KEY (ADDRESS_ID) REFERENCES address (ADDRESS_ID),
+  ADD CONSTRAINT FK_STAFF_BRN FOREIGN KEY (BRANCH_ID) REFERENCES branch (BRANCH_ID),
+  ADD CONSTRAINT FK_STAFF_USER FOREIGN KEY (USER_ID) REFERENCES `user` (USER_ID),
+  ADD CONSTRAINT FK_STAFF_REST FOREIGN KEY (RESTAURANT_ID) REFERENCES restaurant (RESTAURANT_ID) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table user
+--
+ALTER TABLE user
+  ADD CONSTRAINT FK_USR_REST FOREIGN KEY (RESTURANT_ID) REFERENCES restaurant (RESTAURANT_ID);
+
+--
+-- Constraints for table user_role
+--
+ALTER TABLE user_role
+  ADD CONSTRAINT FK_USR_ROL FOREIGN KEY (USER_ID) REFERENCES `user` (USER_ID),
+  ADD CONSTRAINT FK_USR_USER FOREIGN KEY (ROLE_ID) REFERENCES role (ROLE_ID);
+
+--
+-- Constraints for table variant
+--
+ALTER TABLE variant
+  ADD CONSTRAINT FK_VAR_REST FOREIGN KEY (RESTURANT_ID) REFERENCES restaurant (RESTAURANT_ID);
+
+--
+-- Constraints for table variant_translation
+--
+ALTER TABLE variant_translation
+  ADD CONSTRAINT FK_VARTRA_LNG FOREIGN KEY (LANGUAGE_ID) REFERENCES ref_language (LANGUAGE_ID),
+  ADD CONSTRAINT FK_VARTRA_VAR FOREIGN KEY (VARIANT_ID) REFERENCES variant (VARIANT_ID);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

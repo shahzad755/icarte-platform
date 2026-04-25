@@ -1,0 +1,177 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/splash_screen">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/nopadding"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin">
+
+                <com.ctrlplusz.anytextview.AnyTextView
+                    app:typeface="Bariol_Regular.otf"
+                    android:id="@+id/txtItemConfigTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin_half"
+                    android:text="@string/dialog_fragment_title"
+                    android:textColor="@color/primary_text" />
+
+                <com.ctrlplusz.anytextview.AnyTextView
+                    app:typeface="Bariol_Regular.otf"
+                    android:id="@+id/txtItemConfigExisting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="@dimen/item_padding_top_bottom"
+                    android:text="@string/dialog_fragment_title"
+                    android:textColor="@color/green"
+                    android:textStyle="italic"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/txtQuantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/label_quantity"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/primary_text"
+                    />
+
+                <SeekBar
+                    android:id="@+id/quantitySelector"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="25"
+                    android:splitTrack="true"
+                    android:theme="@style/AppTheme" />
+
+                <LinearLayout
+                    android:id="@+id/itemVariantContainerInDialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/item_padding_top_bottom">
+                    <TextView
+                        android:id="@+id/txtVariant"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="@string/label_item_variant"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/primary_text"
+                        />
+                    <Spinner
+                        android:id="@+id/itemVariantSelector"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_text">
+
+                    </Spinner>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/itemAddonContainerInDialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    >
+                    <TextView
+                        android:id="@+id/txtAddons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="@string/label_item_addons"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="@color/primary_text"
+                        />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtSpecialInstructions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/primary_text"
+                    android:text="@string/special_instructions"
+                    android:layout_marginTop="@dimen/item_padding_top_bottom"
+                    />
+
+                <EditText
+                    android:id="@+id/editTxtSpecialInstructions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/primary_text"
+                    android:ems="10"
+                    android:theme="@style/AppTheme" />
+
+                <LinearLayout
+                    android:id="@+id/buttonPanel"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin">
+                    <com.andexert.library.RippleView
+                        android:id="@+id/rippButtonCancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clipChildren="false"
+                        android:background="@drawable/button_selector"
+                        android:elevation="8dp"
+                        android:focusable="true"
+                        android:clickable="true"
+                        app:rv_color="@color/white"
+                        app:rv_type="simpleRipple"
+                        app:rv_alpha="150"
+                        android:padding="@dimen/nopadding"
+                        android:layout_marginEnd="@dimen/activity_horizontal_margin_half">
+                        <Button
+                            android:id="@+id/btnCancel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cancel_item_config_dialog_title"
+                            android:paddingStart="@dimen/item_padding_left_right"
+                            android:paddingEnd="@dimen/item_padding_left_right"
+                            android:background="@color/no_color" />
+                    </com.andexert.library.RippleView>
+                    <com.andexert.library.RippleView
+                        android:id="@+id/rippleBtnSaveOrderItem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clipChildren="false"
+                        android:layout_margin="@dimen/nopadding"
+                        android:elevation="8dp"
+                        android:background="@drawable/button_selector"
+                        android:focusable="true"
+                        android:clickable="true"
+                        app:rv_color="@color/white"
+                        app:rv_type="simpleRipple"
+                        app:rv_alpha="150"
+                        android:padding="@dimen/nopadding">
+                        <Button
+                            android:id="@+id/btnSaveOrderItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/save_item_title"
+                            android:paddingStart="@dimen/item_padding_left_right"
+                            android:paddingEnd="@dimen/item_padding_left_right"
+                            android:background="@color/no_color" />
+                    </com.andexert.library.RippleView>
+                </LinearLayout>
+            </LinearLayout>
+
+</RelativeLayout>

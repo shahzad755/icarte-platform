@@ -1,0 +1,211 @@
+<RelativeLayout
+    android:id="@+id/more"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:layout_margin="@dimen/item_margin"
+    android:paddingBottom="@dimen/item_padding_top_bottom"
+    android:elevation="@dimen/default_elevation"
+    android:background="@drawable/product_item_background">
+
+    <com.andexert.library.RippleView
+        app:rv_color="@color/white"
+        app:rv_type="simpleRipple"
+        app:rv_alpha="150"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageContainer"
+        android:background="@drawable/product_list_selector"
+        android:paddingTop="0dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:paddingBottom="2dp">
+
+<!--        <com.android.volley.ui.NetworkImageViewPlus
+            android:id="@+id/imgItemPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            app:default_image="@drawable/img_placeholder"
+            app:error_image="@drawable/logo"
+            android:tint="@color/tint_background"
+            />
+            -->
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/imgItemPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            app:placeholderImage="@drawable/img_placeholder"
+            app:overlayImage="@drawable/product_image_background"
+            app:roundedCornerRadius="@dimen/item_corner_radius"
+            app:roundBottomLeft="false"
+            app:roundBottomRight="false"
+            app:roundingBorderWidth="1dp"
+            />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="bottom"
+            android:id="@+id/titleAndPriceContainer"
+            android:paddingBottom="0dp"
+            android:paddingStart="10dp">
+
+            <com.ctrlplusz.anytextview.AnyTextView
+                app:typeface="NoticiaText-BoldItalic.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtItemTitle"
+                android:textSize="22sp"
+                android:maxLines="2"
+                android:textColor="@color/list_font_color"
+                android:paddingLeft="@dimen/item_padding_left_right"
+                android:paddingTop="@dimen/item_padding_left_right"
+                android:paddingRight="@dimen/item_padding_left_right"
+                android:paddingBottom="@dimen/item_padding_left_right" />
+
+
+            <!--
+                        <icarte.armedialab.com.icarte.ui.component.CarteTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txtItemTitle"
+                            android:textSize="22sp"
+                            android:maxLines="2"
+                            android:textColor="@color/list_font_color"
+                            android:paddingLeft="@dimen/item_padding_left_right"
+                            android:paddingTop="@dimen/item_padding_left_right"
+                            android:paddingRight="@dimen/item_padding_left_right"
+                            android:paddingBottom="@dimen/item_padding_left_right" />
+            -->
+
+            <com.ctrlplusz.anytextview.AnyTextView
+                app:typeface="NoticiaText-BoldItalic.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtItemPrice"
+                android:textSize="16sp"
+                android:textColor="@color/primary_text"
+                android:paddingLeft="@dimen/item_padding_left_right"
+                android:paddingRight="@dimen/item_padding_left_right"
+                android:paddingBottom="@dimen/item_padding_left_right"
+                android:paddingTop="@dimen/nopadding" />
+
+            <LinearLayout
+                android:id="@+id/miscellaneous_info_container"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/item_padding_left_right">
+                <com.ctrlplusz.anytextview.AnyTextView
+                    app:typeface="NoticiaText-Regular.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtCuisineType"
+                    android:textSize="12sp"
+                    android:textColor="@color/list_font_color"
+                    android:paddingLeft="@dimen/item_padding_left_right"
+                    android:paddingRight="@dimen/item_padding_left_right"
+                    android:paddingBottom="@dimen/nopadding"
+                    android:paddingTop="@dimen/nopadding" />
+
+                <com.ctrlplusz.anytextview.AnyTextView
+                    app:typeface="NoticiaText-Regular.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtSpiceType"
+                    android:textSize="12sp"
+                    android:textColor="@color/list_font_color"
+                    android:paddingLeft="@dimen/item_padding_left_right"
+                    android:paddingRight="@dimen/item_padding_left_right"
+                    android:paddingBottom="@dimen/nopadding"
+                    android:paddingTop="@dimen/nopadding" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.andexert.library.RippleView>
+    <!-- CuisinType and SpiceType container -->
+
+    <Button
+        android:id="@+id/btnAddEditOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:background="@drawable/btn_add_to_order_selector"
+        android:contentDescription="@string/add_to_order"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:paddingStart="@dimen/activity_horizontal_margin_half"
+        android:paddingEnd="@dimen/activity_horizontal_margin_half"
+        android:paddingTop="@dimen/item_padding_left_right"
+        android:paddingBottom="@dimen/item_padding_left_right"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/add_to_order"
+        android:textSize="14sp"
+        />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/descriptionContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/imageContainer"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:background="@color/white">
+
+        <net.grobas.widget.AutoLinearLayout
+            android:id="@+id/itemVariantContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:padding="0dp"
+            app:auto_gravity="left"
+            app:auto_orientation="horizontal">
+
+        </net.grobas.widget.AutoLinearLayout>
+
+        <com.ms.square.android.expandabletextview.ExpandableTextView
+            xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/expand_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            expandableTextView:maxCollapsedLines="2"
+            expandableTextView:animDuration="200">
+            <com.ctrlplusz.anytextview.AnyTextView
+                app:typeface="Bariol_Regular.otf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/expandable_text"
+                android:textSize="18sp"
+                android:textColor="@color/solid_black"
+                android:paddingLeft="@dimen/item_padding_left_right"
+                android:paddingRight="@dimen/item_padding_left_right"
+                android:paddingBottom="@dimen/item_padding_left_right"
+                android:paddingTop="@dimen/item_padding_left_right"
+                />
+            <ImageButton
+                android:id="@id/expand_collapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/item_margin"
+                android:layout_gravity="end|bottom"
+                android:background="@android:color/transparent"/>
+
+        </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+    </LinearLayout>
+
+</RelativeLayout>

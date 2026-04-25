@@ -1,0 +1,38 @@
+<LinearLayout
+    android:id="@+id/layoutParentContainerRatingFeedback"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentStart="true"
+    android:paddingTop="@dimen/item_padding_top_bottom"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.ctrlplusz.anytextview.AnyTextView
+        android:id="@+id/txtFeedackQuestion"
+        app:typeface="NoticiaText-BoldItalic.ttf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textColor="@color/primary_text"
+        android:layout_gravity="center_vertical"
+        android:gravity="start" />
+
+    <LinearLayout
+        android:id="@+id/layoutContainerRatingFeedback"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/activity_vertical_margin">
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/feedbackRatingBar"
+            style="@style/foodRatingBar"
+            android:numStars="5"
+            android:stepSize="1" />
+    </LinearLayout>
+</LinearLayout>

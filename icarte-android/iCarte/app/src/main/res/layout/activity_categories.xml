@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="icarte.armedialab.com.icarte.ui.CategoryListActivity"
+    android:background="@color/theme_window_background"
+    android:clipToPadding="false"
+    >
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_bar" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/categoryList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:clipToPadding="false"
+        tools:context=".Categories"
+        android:layout_marginTop="2dp"
+
+        />
+    <!--android:alpha="0.75"-->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnCallWaiter"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/ico_call_waitor_white_32x32"
+        android:layout_gravity="bottom|end"
+        app:elevation="8dp"
+        app:pressedTranslationZ="12dp"
+        app:backgroundTint="@color/primary"
+        app:rippleColor="@color/fab_action_color"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="@dimen/fab_btn_end_margin"
+        android:layout_marginEnd="@dimen/fab_btn_end_margin"
+        app:fabSize="normal"
+        />
+
+</RelativeLayout>

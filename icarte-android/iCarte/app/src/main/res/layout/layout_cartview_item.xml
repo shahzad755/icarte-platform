@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.andexert.library.RippleView
+    android:id="@+id/orderItemRowRippleViewContainer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:layout_margin="@dimen/grid_item_spacing"
+    android:focusable="true"
+    android:clickable="true"
+    android:background="@drawable/cart_item_background_selector"
+    app:rv_color="@color/white"
+    rv_centered="true"
+    app:rv_type="simpleRipple"
+    app:rv_alpha="150"
+    >
+
+    <LinearLayout
+        android:id="@+id/orderItemRowContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:clipToPadding="false">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/imgOrderItemImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:actualImageScaleType="fitCenter"
+            app:roundAsCircle="true"
+            android:layout_margin="@dimen/item_padding_top_bottom" />
+
+        <RelativeLayout
+            android:id="@+id/itemOrderDescContainer"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/item_padding_left_right"
+            android:layout_marginBottom="@dimen/item_padding_left_right"
+            >
+
+            <com.ctrlplusz.anytextview.AnyTextView
+                android:id="@+id/txtOrderItemTitle"
+                app:typeface="Bariol_Regular.otf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_text"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:layout_marginTop="@dimen/item_default_top_padding"
+                android:layout_marginEnd="@dimen/item_padding_left_right"
+                android:layout_marginStart="@dimen/item_padding_left_right"/>
+
+
+            <RelativeLayout
+                android:id="@+id/itemOrderQuantityConfigLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtOrderItemTitle"
+                android:layout_marginStart="@dimen/item_padding_left_right"
+                >
+                <com.ctrlplusz.anytextview.AnyTextView
+                    android:id="@+id/txtItemUnitPrice"
+                    app:typeface="Bariol_Regular.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary_text"
+                    android:textSize="18sp"
+                    android:text="2167"
+                    android:gravity="center_horizontal"
+                    android:layout_marginBottom="@dimen/item_padding_top_bottom"
+                    android:layout_marginEnd="@dimen/item_padding_left_right"
+                    android:textStyle="bold" />
+
+                <com.ctrlplusz.anytextview.AnyTextView
+                    android:id="@+id/txtItemOrderQuantity"
+                    app:typeface="Bariol_Regular.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="X"
+                    android:textColor="@color/tertiary_text"
+                    android:textSize="18sp"
+                    android:gravity="center_horizontal"
+                    android:layout_toEndOf="@+id/txtItemUnitPrice"
+                    android:layout_marginBottom="@dimen/item_padding_top_bottom"
+                    android:textStyle="bold" />
+
+                <com.ctrlplusz.anytextview.AnyTextView
+                    app:typeface="Bariol_Regular.otf"
+                    android:id="@+id/editTxtOrderItemQty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_marginStart="@dimen/item_padding_left_right"
+                    android:singleLine="true"
+                    android:background="@color/material_blue_grey_800"
+                    android:textColor="@color/primary_text"
+                    android:layout_toEndOf="@+id/txtItemOrderQuantity"
+                    android:paddingEnd="@dimen/item_padding_left_right"
+                    android:paddingStart="@dimen/item_padding_left_right" />
+
+                <com.ctrlplusz.anytextview.AnyTextView
+                    android:id="@+id/txtOrderItemPrice"
+                    app:typeface="Bariol_Regular.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary_text"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginStart="@dimen/activity_vertical_margin"
+                    android:singleLine="true"
+                    android:layout_toEndOf="@id/editTxtOrderItemQty" />
+
+            </RelativeLayout>
+
+            <com.ctrlplusz.anytextview.AnyTextView
+                android:id="@+id/txtOrderItemDescr"
+                app:typeface="Bariol_Regular.otf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/tertiary_text"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_below="@id/itemOrderQuantityConfigLayout"
+                android:layout_marginTop="@dimen/item_default_top_padding"
+                android:layout_marginEnd="@dimen/item_padding_left_right"
+                android:layout_marginStart="@dimen/item_padding_left_right"
+                android:layout_gravity="fill"
+                android:gravity="fill" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/itemOrderConfigContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_padding_left_right"
+            android:layout_marginEnd="@dimen/item_padding_left_right">
+
+            <ImageButton
+                android:id="@+id/imgOrderDeleteItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/remove_32"
+                android:background="@drawable/cart_button_background_selector"
+                android:contentDescription="@string/help_delete_item_from_cart" />
+
+            <ImageButton
+                android:id="@+id/imgDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/detail_32"
+                android:background="@color/no_color"
+                android:contentDescription="@string/help_configure_item_in_cart"
+                android:layout_below="@id/imgOrderDeleteItem"
+                android:layout_marginTop="@dimen/item_padding_top_bottom"/>
+        </RelativeLayout>
+    </LinearLayout>
+</com.andexert.library.RippleView>
